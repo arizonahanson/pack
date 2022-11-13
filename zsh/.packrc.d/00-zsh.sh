@@ -13,7 +13,13 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# antigen
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='48;5;7;38;5;11'
+
+source "$HOME/.antigen.zsh"
+antigen use oh-my-zsh
+antigen bundle git
+antigen apply
 
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
