@@ -13,12 +13,17 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='48;5;7;38;5;11'
 
 setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+# spellcheck commands
+setopt correct
+# turn off completion beeps
+unsetopt LIST_BEEP
 # vi-like editing
 bindkey -v
 # backspace
@@ -69,4 +74,5 @@ precmd() {
     echo -ne "\e[5 q"
   fi
 }
+
 source "$HOME/.zsh_aliases"
