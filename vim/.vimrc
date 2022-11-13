@@ -69,16 +69,16 @@ set cursorline
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 autocmd FileType markdown setlocal spell spelllang=en_us
 autocmd BufRead,BufNewFile *.peg set ft=pigeon
-highlight Normal ctermbg=NONE ctermfg=0 ctermul=NONE cterm=NONE
+highlight Normal ctermbg=NONE ctermfg=15 ctermul=NONE cterm=NONE
 highlight Noise ctermbg=NONE ctermfg=8 cterm=NONE
 highlight Identifier ctermbg=NONE ctermfg=8 cterm=NONE
-highlight Comment ctermbg=NONE ctermfg=7 cterm=NONE
+highlight Comment ctermbg=NONE ctermfg=8 cterm=NONE
 highlight CursorLine ctermbg=NONE ctermfg=NONE cterm=NONE
-highlight Visual ctermbg=7 cterm=NONE
-highlight StatusLine ctermbg=7 ctermfg=fg cterm=NONE
-highlight StatusLineNC ctermbg=7 ctermfg=8 cterm=NONE
-highlight WildMenu ctermbg=7 ctermfg=11 cterm=NONE
-highlight PmenuThumb ctermfg=8
+highlight Visual ctermbg=8 cterm=NONE
+highlight StatusLine ctermbg=8 ctermfg=15 cterm=NONE
+highlight StatusLineNC ctermbg=8 ctermfg=7 cterm=NONE
+highlight WildMenu ctermbg=8 ctermfg=11 cterm=NONE
+highlight PmenuThumb ctermfg=7
 highlight Underlined ctermbg=NONE ctermfg=4 cterm=underline
 highlight IncSearch ctermbg=NONE ctermfg=9 cterm=underline
 highlight Search ctermbg=NONE ctermfg=9 cterm=NONE
@@ -91,24 +91,24 @@ highlight Function ctermfg=6
 highlight Type ctermfg=4
 highlight Statement ctermfg=12
 highlight Keyword ctermfg=10
-highlight Error ctermbg=7 ctermfg=1
-highlight Warning ctermbg=7 ctermfg=9
-highlight Todo ctermbg=7 ctermfg=11
+highlight Error ctermbg=8 ctermfg=1
+highlight Warning ctermbg=8 ctermfg=9
+highlight Todo ctermbg=8 ctermfg=11
 highlight ErrorMsg ctermbg=NONE ctermfg=1
 highlight WarningMsg ctermbg=NONE ctermfg=9
 highlight InfoMsg ctermbg=NONE ctermfg=11
 highlight DiffAdd ctermbg=NONE ctermfg=2
 highlight DiffChange ctermbg=NONE ctermfg=9
 highlight DiffDelete ctermbg=NONE ctermfg=1
-highlight DiffText ctermbg=7 ctermfg=9 cterm=NONE
+highlight DiffText ctermbg=8 ctermfg=9 cterm=NONE
 highlight gitcommitSelectedType ctermbg=NONE ctermfg=11 cterm=NONE
 highlight gitcommitBranch ctermbg=NONE ctermfg=12
-highlight User1 ctermbg=7 ctermfg=11 cterm=NONE
-highlight User2 ctermbg=7 ctermfg=9 cterm=NONE
-highlight User3 ctermbg=7 ctermfg=12 cterm=NONE
-highlight User4 ctermbg=7 ctermfg=8 cterm=NONE
-highlight User5 ctermbg=7 ctermfg=14 cterm=NONE
-highlight User6 ctermbg=7 ctermfg=4 cterm=NONE
+highlight User1 ctermbg=8 ctermfg=11 cterm=NONE
+highlight User2 ctermbg=8 ctermfg=9 cterm=NONE
+highlight User3 ctermbg=8 ctermfg=12 cterm=NONE
+highlight User4 ctermbg=8 ctermfg=7 cterm=NONE
+highlight User5 ctermbg=8 ctermfg=14 cterm=NONE
+highlight User6 ctermbg=8 ctermfg=4 cterm=NONE
 "--- multiple windows
 set statusline=%<\ %f\ %6*%y\ %1*%(%r\ %)%*%2*%(%m\ %)%*%=%3*%{FugitiveHead()}%*\ %4*%l,%c%V%*\ %5*%B\ %*
 highlight! link VisualNOS Visual
