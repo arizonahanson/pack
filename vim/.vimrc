@@ -28,11 +28,21 @@ let g:go_highlight_methods=1
 let g:go_highlight_functions=1
 let g:go_highlight_operators=1
 let g:go_highlight_build_constraints=1
-let g:vimcache='/'.$TMP.'/.'.$USER.'/vim/'
+let g:vimcache='/tmp/.'.$USER.'/vim/'
 let g:gutentags_cache_dir=g:vimcache.'ctags//'
 let g:gutentags_exclude_filetypes=["gitcommit", "gitrebase", "markdown", "nix", ""]
 let g:latex_to_unicode_file_types=".*"
 let g:netrw_home=g:vimcache.'netrw'
+
+silent! call plug#begin()
+  Plug 'tpope/vim-sensible'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'benknoble/vim-auto-origami'
+  Plug 'tpope/vim-fugitive'
+  Plug 'dense-analysis/ale'
+  Plug 'JuliaEditorSupport/julia-vim'
+call plug#end()
 
 "--- important
 set pastetoggle=<F2>
