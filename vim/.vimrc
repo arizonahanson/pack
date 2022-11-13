@@ -34,7 +34,7 @@ let g:gutentags_exclude_filetypes=["gitcommit", "gitrebase", "markdown", "nix", 
 let g:latex_to_unicode_file_types=".*"
 let g:netrw_home=g:vimcache.'netrw'
 
-silent! call plug#begin()
+silent! call plug#begin('~/.vim-plugged')
   Plug 'tpope/vim-sensible'
   Plug 'editorconfig/editorconfig-vim'
   Plug 'airblade/vim-gitgutter'
