@@ -1,4 +1,4 @@
 # TODO: split pack into pkg
 alias l="ls -FG --color=auto"
 alias la="l -A"
-alias ll="la -l"
+alias ll="la -lh"
