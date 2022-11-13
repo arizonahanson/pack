@@ -96,8 +96,8 @@ export ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=11'
 export ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=3'
 export ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=6'
 export ZSH_HIGHLIGHT_STYLES[alias]='fg=6'
-export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=8'
-export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=8'
+export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=7'
+export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=7'
 export ZSH_HIGHLIGHT_STYLES[function]='fg=6'
 export ZSH_HIGHLIGHT_STYLES[precommand]='fg=9'
 export ZSH_HIGHLIGHT_STYLES[command]='fg=2'
@@ -108,8 +108,8 @@ export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=10'
 export ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=10'
 export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
-export ZSH_HIGHLIGHT_STYLES[assign]='fg=8'
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+export ZSH_HIGHLIGHT_STYLES[assign]='fg=7'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
