@@ -2,6 +2,7 @@
 if [ -n "$__ZSH_SOURCED" ]; then return; fi
 __ZSH_SOURCED=1
 
+EDITOR=vim
 # history
 HISTFILE=~/.histfile
 HISTSIZE=9999
@@ -26,8 +27,11 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle colored-man-pages
+antigen bundle git-prompt
 antigen theme robbyrussell
 antigen apply
+
 
 # vi-like editing
 bindkey -v
@@ -80,5 +84,33 @@ precmd() {
 }
 
 ZLE_RPROMPT_INDENT=0
+export ZSH_HIGHLIGHT_STYLES[cursor]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=9'
+export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=1'
+export ZSH_HIGHLIGHT_STYLES[path]='fg=4'
+export ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=9'
+export ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[globbing]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=3'
+export ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=6'
+export ZSH_HIGHLIGHT_STYLES[alias]='fg=6'
+export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=8'
+export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=8'
+export ZSH_HIGHLIGHT_STYLES[function]='fg=6'
+export ZSH_HIGHLIGHT_STYLES[precommand]='fg=9'
+export ZSH_HIGHLIGHT_STYLES[command]='fg=2'
+export ZSH_HIGHLIGHT_STYLES[builtin]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[redirection]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[arg0]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
+export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
+export ZSH_HIGHLIGHT_STYLES[assign]='fg=8'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
 source "$HOME/.zsh_aliases"
