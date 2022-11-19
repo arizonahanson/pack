@@ -29,9 +29,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle colored-man-pages
 antigen bundle git-prompt
-antigen theme robbyrussell
 antigen apply
-
 
 # vi-like editing
 bindkey -v
@@ -83,6 +81,7 @@ precmd() {
   fi
 }
 
+# zsh-syntax-highlighting
 ZLE_RPROMPT_INDENT=0
 export ZSH_HIGHLIGHT_STYLES[cursor]='fg=11'
 export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=9'
@@ -109,8 +108,23 @@ export ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=10'
 export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[assign]='fg=7'
+
+# zsh-auto-suggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
+
+# theme
+ZSH_THEME_GIT_PROMPT_PREFIX="#"
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY="*"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+git_prompt() {
+   echo "$(git_prompt_info)"
+}
+
+PROMPT='%% '
+RPROMPT='%3~$(git_prompt) '
 
 source "$HOME/.zsh_aliases"
