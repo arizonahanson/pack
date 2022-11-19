@@ -115,16 +115,19 @@ export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
 # theme
-ZSH_THEME_GIT_PROMPT_PREFIX="#"
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY="*"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-git_prompt() {
-   echo "$(git_prompt_info)"
+left_prompt() {
+  echo "%(?.%F{cyan}.%F{yellow})%#%{$reset_color%}"
 }
+PROMPT='$(left_prompt) '
 
-PROMPT='%% '
-RPROMPT='%3~$(git_prompt) '
+ZSH_THEME_PWD="%{$reset_color%}%F{blue}%3~%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{magenta}#"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}%F{yellow}*"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+right_prompt() {
+  echo "${ZSH_THEME_PWD}$(git_prompt_info)"
+}
+RPROMPT=' $(right_prompt)'
 
 source "$HOME/.zsh_aliases"
