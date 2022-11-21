@@ -19,7 +19,7 @@ unsetopt LIST_BEEP
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='48;5;7;38;5;11'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='40;5;7;38;5;11'
 
 # antigen
 source "$HOME/.antigen.zsh"
