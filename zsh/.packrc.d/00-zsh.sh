@@ -19,7 +19,7 @@ unsetopt LIST_BEEP
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='48;5;7;38;5;11'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='40;5;7;38;5;11'
 
 # antigen
 source "$HOME/.antigen.zsh"
@@ -115,7 +115,7 @@ ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
 # theme
 left_prompt() {
-  echo "%(?.%F{cyan}.%F{yellow})%#%{$reset_color%}"
+  echo "%(?.%F{green}.%F{red})%#%{$reset_color%}"
 }
 PROMPT='$(left_prompt) '
 

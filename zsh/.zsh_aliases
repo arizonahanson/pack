@@ -2,3 +2,4 @@
 alias l="ls -FG"
 alias la="l -A"
 alias ll="la -lh"
+alias tree="tree -C"
