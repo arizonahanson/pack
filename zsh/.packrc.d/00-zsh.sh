@@ -117,10 +117,10 @@ ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 left_prompt() {
   echo "%(?.%F{green}.%F{red})%#%{$reset_color%}"
 }
-PROMPT='$(left_prompt) '
+PROMPT='%{$reset_color%}$(left_prompt) '
 
 ZSH_THEME_PWD="%{$reset_color%}%F{blue}%3~%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{magenta}#"
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{magenta} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}%F{yellow}*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
