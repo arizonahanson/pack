@@ -1,4 +1,4 @@
 #!/bin/sh
 
-PACK_DIR="$(dirname $(readlink -f "$0"))/../.."
+PACK_DIR="$(dirname $(readlink "$0"))/../.."
 stow -d "$PACK_DIR" -t "$HOME" $@
