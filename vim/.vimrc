@@ -57,7 +57,6 @@ set cmdheight=1
 set scrolloff=6
 set number
 set numberwidth=1
-set lazyredraw
 let &fillchars='vert:║,diff:|,fold:'.g:foldchar
 let &showbreak='<< '
 autocmd FileType gitcommit setlocal nonumber
@@ -159,9 +158,9 @@ call mkdir(&directory, 'p', 0700)
 set wildmode=longest:full,full
 set wildignore=*.o,*~,*.pyc,*.so,*.class,.DS_Store
 "--- multi-byte characters
+let &termencoding=&encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set termencoding=utf-8
 "--- various
 let &viminfo="%,!,'1000,s1024,n".g:vimcache.'viminfo'
 set viewoptions=folds,cursor
