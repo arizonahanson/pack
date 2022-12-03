@@ -15,6 +15,10 @@ setopt HIST_REDUCE_BLANKS
 setopt correct
 unsetopt LIST_BEEP
 
+GREP_COLORS="mt=38;5;11:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
+KEYTIMEOUT="1"
+LESS="-erFX"
+
 # compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
