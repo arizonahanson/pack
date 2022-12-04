@@ -9,7 +9,7 @@ highlight StatusLineNC ctermbg=8 ctermfg=7 cterm=NONE
 highlight WildMenu ctermbg=8 ctermfg=11 cterm=NONE
 highlight PmenuThumb ctermfg=7
 highlight Underlined ctermbg=NONE ctermfg=4 cterm=underline
-highlight IncSearch ctermbg=NONE ctermfg=9 cterm=underline
+highlight IncSearch ctermbg=8 ctermfg=9 cterm=NONE
 highlight Search ctermbg=NONE ctermfg=9 cterm=NONE
 highlight String ctermfg=3
 highlight Character ctermfg=11
