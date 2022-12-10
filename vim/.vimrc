@@ -201,4 +201,6 @@ nnoremap <silent> <F8> :ALEDetail<CR>
 nnoremap <silent> <F9> :ALEGoToDefinition<CR>
 nnoremap <silent> gG :GitGutterUndoHunk<CR>
 nnoremap <Leader>tn :term<CR>
+tnoremap <C-W>tn <C-W>:term<CR>
 nnoremap <Leader>tt :tab term<CR>
+tnoremap <C-W>tt <C-W>:tab term<CR>
