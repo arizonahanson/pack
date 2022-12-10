@@ -108,4 +108,5 @@ highlight! link jsThis Constant
 highlight! link goBuiltins Function
 highlight! link csBraces Noise
 highlight! link csLogicSymbols Operator
+syntax keyword schemeSyntax contained define-stream lambda-stream
 

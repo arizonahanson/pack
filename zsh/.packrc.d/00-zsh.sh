@@ -55,8 +55,8 @@ bindkey -a "${terminfo[khome]}" vi-beginning-of-line
 bindkey  "${terminfo[kend]}" vi-end-of-line
 bindkey -a "${terminfo[kend]}" vi-end-of-line
 # complete word
-bindkey '^w' vi-forward-word
-bindkey '^ ' autosuggest-accept
+bindkey '^e' autosuggest-accept
+bindkey '^f' vi-forward-word
 # save prompt status
 zle-line-init() {
   typeset -g __prompt_status="$?"
@@ -85,7 +85,7 @@ precmd() {
 }
 
 # zsh-syntax-highlighting
-ZLE_RPROMPT_INDENT=0
+ZLE_RPROMPT_INDENT=2
 export ZSH_HIGHLIGHT_STYLES[cursor]='bold,fg=yellow'
 export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='bold,fg=red'
 export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'

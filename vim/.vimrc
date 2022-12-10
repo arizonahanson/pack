@@ -166,6 +166,7 @@ let &viminfo="%,!,'1000,s1024,n".g:vimcache.'viminfo'
 set viewoptions=folds,cursor
 let &viewdir=g:vimcache.'view'
 call mkdir(&viewdir, 'p', 0700)
+setl lispwords+=define-stream,stream-lambda
 "--- mappings
 function! GitGutterPrevHunkWrap(count)
   for i in range(1, a:count)
@@ -199,4 +200,5 @@ nnoremap <silent> <F7> :ALEHover<CR>
 nnoremap <silent> <F8> :ALEDetail<CR>
 nnoremap <silent> <F9> :ALEGoToDefinition<CR>
 nnoremap <silent> gG :GitGutterUndoHunk<CR>
-
+nnoremap <Leader>tn :term<CR>
+nnoremap <Leader>tt :tab term<CR>
