@@ -1,0 +1,38 @@
+xterm*faceName: JetBrains Mono
+xterm*faceSize: 8
+! special
+*.foreground:   #e2e2e2
+*.background:   #000000
+*.cursorColor:  #e2e2e2
+
+! black
+*.color0:       #000000
+*.color8:       #474747
+
+! red
+*.color1:       #c57c8b
+*.color9:       #bd836c
+
+! green
+*.color2:       #6e9d5d
+*.color10:      #42a179
+
+! yellow
+*.color3:       #8d6233
+*.color11:      #ab8c53
+
+! blue
+*.color4:       #6495bf
+*.color12:      #918ac4
+
+! magenta
+*.color5:       #b17fbb
+*.color13:      #c27aa7
+
+! cyan
+*.color6:       #0da296
+*.color14:      #2c9eaf
+
+! white
+*.color7:       #919191
+*.color15:      #e2e2e2
