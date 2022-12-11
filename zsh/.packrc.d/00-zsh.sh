@@ -15,7 +15,7 @@ setopt HIST_REDUCE_BLANKS
 setopt correct
 unsetopt LIST_BEEP
 
-GREP_COLORS="mt=38;5;11:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
+GREP_COLORS="mt=38;5;3:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
 KEYTIMEOUT="1"
 LESS="-erFX"
 
@@ -23,7 +23,7 @@ LESS="-erFX"
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='40;5;7;38;5;11'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='43;30'
 
 # antigen
 source "$HOME/.antigen.zsh"
