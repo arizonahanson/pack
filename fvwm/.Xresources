@@ -1,4 +1,5 @@
 xterm*faceName: JetBrains Mono
+xterm*iconFont: nil2
 !xterm*faceSize: 8
 ! special
 *.foreground:   #e2e2e2

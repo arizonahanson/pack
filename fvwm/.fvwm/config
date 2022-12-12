@@ -27,15 +27,16 @@ ColormapFocus FollowsMouse
 # default Styles:
 # make sure these fonts exist on your system:
 #Style *           Font -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
-#Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
+Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
 Style *           HilightFore black, HilightBack Gray60
-Style *           BorderWidth 8, HandleWidth 8
-#Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
-#Style *           MWMFunctions, MWMDecor, HintOverride
-#Style *           DecorateTransient, !UsePPosition
-#Style *           IconBox 0 -10 -280 -1
-#Style *           FocusFollowsMouse
-#Style *           TileCascadePlacement
+Style *           BorderWidth 6, HandleWidth 6
+Style *            IconSize 64 64
+Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
+Style *           MWMFunctions, MWMDecor, HintOverride
+Style *           DecorateTransient, !UsePPosition
+Style *           IconBox 0 -10 -280 -1
+Style *           FocusFollowsMouse
+Style *           TileCascadePlacement
 
 # Styles for various Fvwm modules:
 Style "Fvwm*"       !Title,  Sticky, WindowListSkip
@@ -45,7 +46,7 @@ Style "Fvwm*"       BorderWidth 2, CirculateSkipIcon, CirculateSkip
 #Style "FvwmButtons" Icon toolbox.xpm, ClickToFocus
 
 # Styles for your common terminal emulator programs:
-# Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
+Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
 # Style "rxvt"        Icon term.xpm, SloppyFocus, IconBox -70 1 -1 -140
 # Style "rxvt"        MWMBorder, MWMButtons
 
@@ -402,7 +403,7 @@ AddToFunc ChangeDefaultFocus I Style * $0
 ## Mostly, you don't have to specify icon files, as FvwmIconBox now
 ## reads icon files specified in Style commands.
 ##
-#*FvwmIconBox            "Fvwm*"         -
+*FvwmIconBox            "Fvwm*"         -
 #
 ## FvwmForm alias - rlogin or telnet to host via xterm
 #*Rlogin: WarpPointer
