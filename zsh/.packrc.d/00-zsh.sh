@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Only execute this file once per interactive shell.
 if [ -n "$__ZSH_SOURCED" ]; then return; fi
 __ZSH_SOURCED=1
@@ -118,19 +119,13 @@ export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
 # theme
-left_prompt() {
-  echo "%(?.%F{green}.%F{red})%#%{$reset_color%}"
-}
-PROMPT='%{$reset_color%}$(left_prompt) '
+PROMPT="%(?.%F{green}.%F{red})%#%f "
 
-ZSH_THEME_PWD="%{$reset_color%}%F{blue}%3~%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{magenta} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}%F{yellow}*"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-right_prompt() {
-  echo "${ZSH_THEME_PWD}$(git_prompt_info)"
-}
-RPROMPT=' $(right_prompt)'
+ZSH_THEME_PWD='%F{blue}%3~%f'
+ZSH_THEME_GIT_PROMPT_PREFIX='%F{magenta} '
+ZSH_THEME_GIT_PROMPT_DIRTY='%f%F{yellow}*'
+ZSH_THEME_GIT_PROMPT_CLEAN=''
+ZSH_THEME_GIT_PROMPT_SUFFIX='%f'
+RPROMPT=" ${ZSH_THEME_PWD}$(git_prompt_info)"
 
 source "$HOME/.zsh_aliases"
