@@ -57,7 +57,7 @@ bindkey  "${terminfo[kend]}" vi-end-of-line
 bindkey -a "${terminfo[kend]}" vi-end-of-line
 # complete word
 bindkey '^e' autosuggest-accept
-bindkey '^f' vi-forward-word
+bindkey '^n' vi-forward-word
 # save prompt status
 zle-line-init() {
   typeset -g __prompt_status="$?"
