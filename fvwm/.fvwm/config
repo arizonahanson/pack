@@ -1,206 +1,208 @@
-# Ignore Numlock and other modifiers for bindings
-IgnoreModifiers L25
-
-EwmhBaseStruts 0 0 0 0
-DeskTopSize 2x1
-
-EdgeScroll 250 250
-EdgeResistance 250
-Style * EdgeMoveDelay 250, EdgeMoveResistance 250
-Style * SnapAttraction 15 SameType ScreenAll, SnapGrid
-
-ClickTime 500
 
 DefaultFont "xft:JetBrains Mono:pixelsize=16:antialias=True"
 
-# Sets all windows to OpaqueMove (vs a wired frame) and  windows will
+EwmhBaseStruts 0 0 0 0
+DeskTopSize 2x1
+ClickTime 500
 OpaqueMoveSize unlimited
+ColormapFocus FollowsMouse
+# Ignore Numlock and other modifiers for bindings
+IgnoreModifiers L25
+EdgeScroll 250 250
+EdgeResistance 250
 
+Style * EdgeMoveDelay 250, EdgeMoveResistance 250
+Style * SnapAttraction 15 SameType ScreenAll, SnapGrid
 # WindowShade
-Style * WindowShadeScrolls, WindowShadeSteps 10
+Style * WindowShadeScrolls, WindowShadeSteps 1
+# default Styles:
+Style * HilightFore black, HilightBack #919191
+Style * BorderWidth 6, HandleWidth 6
+Style * IconSize 256 256
+Style * IconBox 32 32 -32 -32, IconGrid 32 32, IconFill r b
+Style * DecorateTransient, !UsePPosition
+Style * FocusFollowsMouse
+Style * TileCascadePlacement
 
+Style xclock NoTitle
 
 MenuStyle * fvwm, Font "xft:JetBrains Mono:pixelsize=14:antialias=True"
 MenuStyle * Foreground black, Background grey60, Greyed grey40
 
-ColormapFocus FollowsMouse
-
-# default Styles:
-Style *           HilightFore black, HilightBack #919191
-Style *           BorderWidth 6, HandleWidth 6
-Style *           IconSize 256 256
-Style *           MWMFunctions, MWMDecor, HintOverride
-Style *           DecorateTransient, !UsePPosition
-Style *           IconBox 32 32 -32 -32, IconGrid 32 32, IconFill r b
-Style *           FocusFollowsMouse
-Style *           TileCascadePlacement
-
-# some simple default key bindings:
-Key Next         A       SCM     Next (AcceptsFocus) Focus
-Key Prior        A       SCM     Prev (AcceptsFocus) Focus
-
-# some simple default mouse bindings:
-#   for the root window:
-Mouse 1	R   	A       Menu RootMenu Nop
-Mouse 2	R    	A      	Menu Window-Ops Nop
-Mouse 3	R    	A      	WindowList
-
-#   for the title bar buttons:
-Mouse 0	1    	A      	Menu Window-Ops2 Close
-Mouse 0	2    	A     	Maximize-Func
-Mouse 0	4    	A     	Thumbnail
-
-#   for other parts of the window/borders/icons:
-Mouse 1	F	A	Resize-or-Raise
-Mouse 1	TS	A	Move-or-Raise
-Mouse 1	I	A	Move-or-Iconify
-Mouse 2	I	A	DeThumbnail
-Mouse 2	FST	A	Menu Window-Ops2 Nop
-Mouse 3	TSIF	A	RaiseLower
-
 ######################## Initialization Functions ############################
 AddToFunc StartFunction
- + I Nop
++ I Exec xsetroot -solid rgb:70/50/70
++ I All (Iconic) DeThumbnail
++ I Exec rm -f $[HOME]/.fvwm/icon.tmp.*.png
++ I FvwmConsole
 
 AddToFunc InitFunction
- + I exec xsetroot -mod 2 2 -fg rgb:55/40/55 -bg rgb:70/50/70
++ I Exec xclock -bg ivory
++ I Nop
 
-# For some SM-s (like gnome-session) there is an internal background setter.
 AddToFunc SessionInitFunction
- + I Nop
++ I Nop
+
+# some simple default key bindings:
+Key Next A SCM Next (AcceptsFocus) Focus
+Key Prior A SCM Prev (AcceptsFocus) Focus
+
+# some simple default mouse bindings:
+# for the root window:
+Mouse 1 R A Menu RootMenu Nop
+Mouse 2 R A Menu Window-Ops Nop
+Mouse 3 R A WindowList
+
+# for the title bar buttons:
+Mouse 0 1 A Menu Window-Ops2 Close
+Mouse 0 2 A Maximize
+Mouse 0 4 A Thumbnail
+
+# for other parts of the window/borders/icons:
+Mouse 1 F A Resize-or-Raise
+Mouse 1 TS A Move-or-Raise
+Mouse 1 I A Move-or-Iconify
+Mouse 2 I A DeThumbnail
+Mouse 2 FST A Menu Window-Ops2 Nop
+Mouse 3 TSIF A RaiseLower
+
+ButtonStyle 1 Vector 10 25x40@1 20x40@1 20x80@1 60x80@1 60x65@1 35x65@0 85x65@0 85x10@0 30x10@1 30x65@1
+ButtonStyle 2 Vector 11 80x20@1 45x20@1 55x30@1 30x55@1 20x45@1 20x80@1 55x80@0 45x70@0 70x45@0 80x55@0 80x20@0
+ButtonStyle 4 Vector 8 40x20@1 40x50@1 20x50@1 50x80@1 80x50@0 60x50@0 60x20@0 40x20@1
 
 ######################## Menus ###################
-AddToMenu RootMenu	"Root Menu"	Title
-+			"XTerm"		Exec exec xterm -ai
-+     "Firefox" Exec exec firefox
-+			"Fvwm Modules"	          Popup Module-Popup
-+                       "Fvwm Window Ops"         Popup Window-Ops
-+                       "Fvwm Simple Config Ops"  Popup Misc-Ops
-+			""		Nop
-+                       "Refresh Screen"   Refresh
-+                       "Recapture Screen" Recapture
-+			""		Nop
-+			"Exit Fvwm"	Popup Quit-Verify
+AddToMenu RootMenu "Root Menu" Title
++ "XTerm" Exec exec xterm -ai
++ "Firefox" Exec exec firefox
++ "Fvwm Modules" Popup Module-Popup
++ "Fvwm Window Ops" Popup Window-Ops
++ "Fvwm Simple Config Ops" Popup Misc-Ops
++ "" Nop
++ "Refresh Screen" Refresh
++ "Recapture Screen" Recapture
++ "" Nop
++ "Exit Fvwm" Popup Quit-Verify
 
-AddToMenu Window-Ops	"Window Ops"	Title
-+			"Move"		Move
-+			"Resize"	Resize
-+			"Raise"		Raise
-+			"Lower"		Lower
-+     "Shade"   WindowShade toggle
-+		 	"(De)Iconify"	Thumbnail
-+			"(Un)Stick"	Stick
-+			"(Un)Maximize"	Maximize
-+			""		Nop
-+			"Delete"	Delete
-+			"Close"		Close
-+			"Destroy"	Destroy
-+			""		Nop
-+			"Refresh Window" RefreshWindow
+AddToMenu Window-Ops "Window Ops" Title
++ "Move" Move
++ "Resize" Resize
++ "Raise" Raise
++ "Lower" Lower
++ "Shade" WindowShade toggle
++ "(De)Iconify" Thumbnail
++ "(Un)Stick" Stick
++ "(Un)Maximize" Maximize
++ "" Nop
++ "Delete" Delete
++ "Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "Refresh Window" RefreshWindow
 
 AddToMenu Misc-Ops "Misc Config Opts" Title
-+     "Sloppy Focus"        ChangeDefaultFocus SloppyFocus
-+     "Click To Focus"      ChangeDefaultFocus ClickToFocus
-+     "Focus Follows Mouse" ChangeDefaultFocus FocusFollowsMouse
-+     "" Nop
-+     "Colormap Follows Mouse" ColormapFocus FollowsMouse
-+     "Colormap Follows Focus" ColormapFocus FollowsFocus
-+     "" Nop
-+     "Full Paging ON"         EdgeScroll 100 100
-+     "All Paging OFF"         EdgeScroll 0 0
-+     "Horizontal Paging Only" EdgeScroll 100 0
-+     "Vertical Paging Only"   EdgeScroll 0 100
-+     "Partial Paging"         EdgeScroll 50 50
-+     "Full Paging && Edge Wrap" EdgeScroll 100000 100000
++ "Sloppy Focus" ChangeDefaultFocus SloppyFocus
++ "Click To Focus" ChangeDefaultFocus ClickToFocus
++ "Focus Follows Mouse" ChangeDefaultFocus FocusFollowsMouse
++ "" Nop
++ "Colormap Follows Mouse" ColormapFocus FollowsMouse
++ "Colormap Follows Focus" ColormapFocus FollowsFocus
++ "" Nop
++ "Full Paging ON" EdgeScroll 100 100
++ "All Paging OFF" EdgeScroll 0 0
++ "Horizontal Paging Only" EdgeScroll 100 0
++ "Vertical Paging Only" EdgeScroll 0 100
++ "Partial Paging" EdgeScroll 50 50
++ "Full Paging && Edge Wrap" EdgeScroll 100000 100000
 
-AddToMenu Window-Ops2	"&Move"		Move
-+			"&Resize"	Resize
-+			"R&aise"	Raise
-+			"&Lower"	Lower
-+     "S&hade"   WindowShade toggle
-+			"(De)&Iconify"	Thumbnail
-+			"(Un)&Stick"	Stick
-+     "(Un)Ma&ximize" Maximize
-+			""		Nop
-+			"&Delete"	Delete
-+			"&Close"	Close
-+			"Destroy"	Destroy
-+			""		Nop
-+			"ScrollBar" 	Module FvwmScroll 2 2
+AddToMenu Window-Ops2 "&Move" Move
++ "&Resize" Resize
++ "R&aise" Raise
++ "&Lower" Lower
++ "S&hade" WindowShade toggle
++ "(De)&Iconify" Thumbnail
++ "(Un)&Stick" Stick
++ "(Un)Ma&ximize" Maximize
++ "" Nop
++ "&Delete" Delete
++ "&Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "ScrollBar" Module FvwmScroll 2 2
 
-AddToMenu Module-Popup	"FvwmModules"	Title
-+			"Identify"	Module	FvwmIdent
-+			"Talk"  	Module	FvwmTalk
-+			""		Nop
-+			"Button-Bar"	Module	FvwmButtons
-+			"Pager"		Module  FvwmPager 0 0
-+			"Pager (2 desks)" Module  FvwmPager 0 1
-+			"WinList"	Module  FvwmWinList
-+			""		Nop
-+			"Banner"	Module	FvwmBanner
-+     "ScrollBar"     Module  FvwmScroll 50 50
-+			"Background"	Module  FvwmBacker
-+     "AutoRaise"     Module  FvwmAuto 200 Raise Nop
-+     "Stop AutoRaise" KillModule FvwmAuto
-+			""		Nop
-+			"IconBox"	Module	FvwmIconBox
-+     "IconMan"       Module  FvwmIconMan
-+			""		Nop
-+     "Form - Rlogin"      Module FvwmForm Rlogin
-+     "Form - MyFvwmTalk"  Module FvwmForm MyFvwmTalk
-+     "Form - QuitVerify"  Module FvwmForm QuitVerify
+AddToMenu Module-Popup "FvwmModules" Title
++ "Identify" Module FvwmIdent
++ "Talk" Module FvwmTalk
++ "" Nop
++ "Button-Bar" Module FvwmButtons
++ "Pager" Module FvwmPager 0 0
++ "Pager (2 desks)" Module FvwmPager 0 1
++ "WinList" Module FvwmWinList
++ "" Nop
++ "Banner" Module FvwmBanner
++ "ScrollBar" Module FvwmScroll 50 50
++ "Background" Module FvwmBacker
++ "AutoRaise" Module FvwmAuto 200 Raise Nop
++ "Stop AutoRaise" KillModule FvwmAuto
++ "" Nop
++ "IconBox" Module FvwmIconBox
++ "IconMan" Module FvwmIconMan
++ "" Nop
++ "Form - Rlogin" Module FvwmForm Rlogin
++ "Form - MyFvwmTalk" Module FvwmForm MyFvwmTalk
++ "Form - QuitVerify" Module FvwmForm QuitVerify
 
-AddToMenu Quit-Verify 	"Really Quit Fvwm?" Title
-+		      	"Yes, Really Quit"  Quit
-+		      	""		    Nop
-+           "Restart Fvwm"      Restart
-+		      	"No, Don't Quit"    Nop
+AddToMenu Quit-Verify "Really Quit Fvwm?" Title
++ "Yes, Really Quit" Quit
++ "" Nop
++ "Restart Fvwm" Restart
++ "No, Don't Quit" Nop
 
 ######################## Sample Functions ##########################
 
-AddToFunc Move-or-Raise		I Raise
-+				M Move
-+  				D Lower
+AddToFunc Move-or-Raise
++ I Raise
++ M Move
++ D Lower
 
-AddToFunc Move-or-Raise2	M Raise
-+				M Move
-+  				D Lower
+AddToFunc Move-or-Raise2
++ M Raise
++ M Move
++ D Lower
 
-AddToFunc Maximize-Func		M Maximize	 0 100
-+				C Maximize	 0 80
-+				D Maximize	 100 100
+AddToFunc Move-or-Iconify
++ I Raise
++ M Move
++ D DeThumbnail
 
-AddToFunc Move-or-Iconify	I Raise
-+				M Move
-+				D DeThumbnail
+AddToFunc Resize-or-Raise
++ I Raise
++ M Resize
++ D Lower
 
-AddToFunc Resize-or-Raise	I Raise
-+				M Resize
-+				D Lower
+AddToFunc Resize-or-Raise2
++ M Raise
++ M Resize
++ D Lower
 
-AddToFunc Resize-or-Raise2	M Raise
-+				M Resize
-+				D Lower
-
-AddToFunc Iconify-and-Raise     I Iconify
-+                               I Raise
+AddToFunc Iconify-and-Raise I Iconify
++ I Raise
 
 AddToFunc FocusAndWarp I Focus
-+                      I WarpToWindow 2p 2p
++ I WarpToWindow 2p 2p
 
 AddToFunc DeiconifyFocusAndWarp I DeThumbnail
-+                               I FocusAndWarp
++ I FocusAndWarp
 
 AddToFunc ChangeDefaultFocus I Style * $0
-+                            I Recapture
++ I Recapture
 
 DestroyFunc Thumbnail
 AddToFunc Thumbnail
 + I ThisWindow (Shaded) WindowShade toggle
 + I Raise
 + I ThisWindow (Iconifiable, !Iconic) PipeRead \
-    "xwd -silent -id $[w.id] | convert -scale 256 -frame 1x1 \
-    -mattecolor black -quality 0 xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
+ "xwd -silent -id $[w.id] | convert -thumbnail 256x192 -quality 0 \
+  xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
 + I Iconify
 + I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png, StaysOnBottom
 + I PlaceAgain Icon
