@@ -87,34 +87,34 @@ precmd() {
 
 # zsh-syntax-highlighting
 ZLE_RPROMPT_INDENT=2
-export ZSH_HIGHLIGHT_STYLES[cursor]='bold,fg=yellow'
-export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='bold,fg=red'
+export ZSH_HIGHLIGHT_STYLES[cursor]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=9'
 export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 export ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
-export ZSH_HIGHLIGHT_STYLES[path_prefix]='bold,fg=red'
-export ZSH_HIGHLIGHT_STYLES[history-expansion]='bold,fg=blue'
-export ZSH_HIGHLIGHT_STYLES[globbing]='bold,fg=blue'
-export ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='bold,fg=yellow'
-export ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='bold,fg=yellow'
+export ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=9'
+export ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[globbing]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=11'
 export ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
 export ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
 export ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
 export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=white'
 export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=white'
 export ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
-export ZSH_HIGHLIGHT_STYLES[precommand]='bold,fg=red'
+export ZSH_HIGHLIGHT_STYLES[precommand]='fg=9'
 export ZSH_HIGHLIGHT_STYLES[command]='fg=green'
-export ZSH_HIGHLIGHT_STYLES[builtin]='bold,fg=blue'
-export ZSH_HIGHLIGHT_STYLES[redirection]='bold,fg=green'
-export ZSH_HIGHLIGHT_STYLES[arg0]='bold,fg=green'
-export ZSH_HIGHLIGHT_STYLES[commandseparator]='bold,fg=green'
-export ZSH_HIGHLIGHT_STYLES[reserved-word]='bold,fg=green'
-export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='bold,fg=magenta'
-export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='bold,fg=magenta'
+export ZSH_HIGHLIGHT_STYLES[builtin]='fg=12'
+export ZSH_HIGHLIGHT_STYLES[redirection]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[arg0]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=10'
+export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
+export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta'
 
 # zsh-auto-suggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="bold,fg=black"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 
