@@ -4,12 +4,12 @@ EdgeResistance 250
 Style * EdgeMoveDelay 250, EdgeMoveResistance 250
 ClickTime 600
 
-DefaultFont "xft:JetBrains Mono:Bold:size=6:antialias=True"
+DefaultFont "xft:JetBrains Mono:pixelsize=18:antialias=True"
 
 # Sets all windows to OpaqueMove (vs a wired frame) and  windows will
 # snap to each other and the edge of the screen.
 OpaqueMoveSize unlimited
-Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+Style * !ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
 
 # WindowShade
 Style * WindowShadeScrolls, WindowShadeSteps 10
@@ -19,7 +19,8 @@ Style * WindowShadeScrolls, WindowShadeSteps 10
 IgnoreModifiers L25
 
 DeskTopSize 2x1
-Menustyle * fvwm, Font -adobe-times-bold-r-*-*-14-*-*-*-*-*-*-*
+# Menustyle * fvwm, Font -adobe-times-bold-r-*-*-14-*-*-*-*-*-*-*
+MenuStyle * fvwm, Font "xft:JetBrains Mono:size=6:antialias=True"
 MenuStyle * Foreground black, Background grey60, Greyed grey40
 
 ColormapFocus FollowsMouse
@@ -27,26 +28,26 @@ ColormapFocus FollowsMouse
 # default Styles:
 # make sure these fonts exist on your system:
 #Style *           Font -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
-Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
-Style *           HilightFore black, HilightBack Gray60
+#Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
+Style *           HilightFore black, HilightBack #919191
 Style *           BorderWidth 6, HandleWidth 6
 Style *           IconSize 64 64
-Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
+#Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
 Style *           MWMFunctions, MWMDecor, HintOverride
 Style *           DecorateTransient, !UsePPosition
-Style *           IconBox 0 -10 -280 -1
+Style *           IconBox 10 10 -10 -10
 Style *           FocusFollowsMouse
 Style *           TileCascadePlacement
 
 # Styles for various Fvwm modules:
-Style "Fvwm*"       !Title,  Sticky, WindowListSkip
-Style "Fvwm*"       BorderWidth 2, CirculateSkipIcon, CirculateSkip
+#Style "Fvwm*"       !Title,  Sticky, WindowListSkip
+#Style "Fvwm*"       BorderWidth 2, CirculateSkipIcon, CirculateSkip
 #Style "FvwmPager"   StaysOnTop
 #Style "FvwmBanner"  StaysOnTop
 #Style "FvwmButtons" Icon toolbox.xpm, ClickToFocus
 
 # Styles for your common terminal emulator programs:
-Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
+# Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
 # Style "rxvt"        Icon term.xpm, SloppyFocus, IconBox -70 1 -1 -140
 # Style "rxvt"        MWMBorder, MWMButtons
 
@@ -99,7 +100,7 @@ AddToFunc SessionInitFunction
 
 ######################## Menus ###################
 AddToMenu RootMenu	"Root Menu"	Title
-+			"XTerm"		Exec exec xterm
++			"XTerm"		Exec exec xterm -ai
 +     "Firefox" Exec exec firefox
 # +			"Rxvt"		Exec exec rxvt
 # +			""		Nop
