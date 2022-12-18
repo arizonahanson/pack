@@ -35,7 +35,7 @@ Style *           IconSize 128 128
 #Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
 Style *           MWMFunctions, MWMDecor, HintOverride
 Style *           DecorateTransient, !UsePPosition
-Style *           IconBox 24 24 -24 -24, IconGrid 128 92, IconFill r b
+Style *           IconBox 32 32 -32 -32, IconGrid 32 32, IconFill r b
 Style *           FocusFollowsMouse
 Style *           TileCascadePlacement
 
@@ -289,6 +289,7 @@ AddToFunc Thumbnail
     -mattecolor black -quality 0 xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
 + I Iconify
 + I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png, StaysOnBottom
++ I PlaceAgain Icon
 
 DestroyFunc DeThumbnail
 AddToFunc DeThumbnail
