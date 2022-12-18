@@ -31,7 +31,7 @@ ColormapFocus FollowsMouse
 #Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
 Style *           HilightFore black, HilightBack #919191
 Style *           BorderWidth 6, HandleWidth 6
-Style *           IconSize 64 64
+Style *           IconSize 128 128
 #Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
 Style *           MWMFunctions, MWMDecor, HintOverride
 Style *           DecorateTransient, !UsePPosition
@@ -76,13 +76,13 @@ Mouse 3	R    	A      	WindowList
 #   for the title bar buttons:
 Mouse 0	1    	A      	Menu Window-Ops2 Close
 Mouse 0	2    	A     	Maximize-Func
-Mouse 0	4    	A     	Iconify
+Mouse 0	4    	A     	Thumbnail
 
 #   for other parts of the window/borders/icons:
 Mouse 1	F	A	Resize-or-Raise
 Mouse 1	TS	A	Move-or-Raise
 Mouse 1	I	A	Move-or-Iconify
-Mouse 2	I	A	Iconify
+Mouse 2	I	A	DeThumbnail
 Mouse 2	FST	A	Menu Window-Ops2 Nop
 Mouse 3	TSIF	A	RaiseLower
 
@@ -151,7 +151,7 @@ AddToMenu Window-Ops	"Window Ops"	Title
 +			"Resize"	Resize
 +			"Raise"		Raise
 +			"Lower"		Lower
-+		 	"(De)Iconify"	Iconify
++		 	"(De)Iconify"	Thumbnail
 +			"(Un)Stick"	Stick
 +			"(Un)Maximize"	Maximize
 +			""		Nop
@@ -165,7 +165,7 @@ AddToMenu Window-Ops2	"&Move"		Move
 +			"&Resize"	Resize
 +			"R&aise"	Raise
 +			"&Lower"	Lower
-+			"(De)&Iconify"	Iconify
++			"(De)&Iconify"	Thumbnail
 +			"(Un)&Stick"	Stick
 +                       "(Un)Ma&ximize" Maximize
 +			""		Nop
@@ -246,7 +246,7 @@ AddToFunc Maximize-Func		M Maximize	 0 100
 
 AddToFunc Move-or-Iconify	I Raise
 +				M Move
-+				D Iconify
++				D DeThumbnail
 
 AddToFunc Resize-or-Raise	I Raise
 +				M Resize
@@ -274,12 +274,27 @@ AddToFunc Iconify-and-Raise     I Iconify
 AddToFunc FocusAndWarp I Focus
 +                      I WarpToWindow 2p 2p
 
-AddToFunc DeiconifyFocusAndWarp I Iconify -1
+AddToFunc DeiconifyFocusAndWarp I DeThumbnail
 +                               I FocusAndWarp
 
 AddToFunc ChangeDefaultFocus I Style * $0
 +                            I Recapture
 
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I ThisWindow (Shaded) WindowShade toggle
++ I Raise
++ I ThisWindow (Iconifiable, !Iconic) PipeRead \
+    "xwd -silent -id $[w.id] | convert -scale 128 -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
++ I Iconify
++ I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png, StaysOnBottom
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I DestroyWindowStyle
++ I Exec rm -f $HOME/.fvwm/icon.tmp.$[w.id].png
++ I Iconify
 ################### FvwmButtons button-bar ################################
 #*FvwmButtons: Geometry 520x100-1-1
 #*FvwmButtons: Back bisque3
