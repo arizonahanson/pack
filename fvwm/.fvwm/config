@@ -1,25 +1,26 @@
+# Ignore Numlock and other modifiers for bindings
+IgnoreModifiers L25
+
 EwmhBaseStruts 0 0 0 0
+DeskTopSize 2x1
+
 EdgeScroll 250 250
 EdgeResistance 250
 Style * EdgeMoveDelay 250, EdgeMoveResistance 250
-ClickTime 600
+Style * SnapAttraction 15 SameType ScreenAll, SnapGrid
 
-DefaultFont "xft:JetBrains Mono:pixelsize=18:antialias=True"
+ClickTime 500
+
+DefaultFont "xft:JetBrains Mono:pixelsize=16:antialias=True"
 
 # Sets all windows to OpaqueMove (vs a wired frame) and  windows will
-# snap to each other and the edge of the screen.
 OpaqueMoveSize unlimited
-Style * !ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
 
 # WindowShade
 Style * WindowShadeScrolls, WindowShadeSteps 10
 
-# Ignore Numlock and other modifiers for bindings
-# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
-IgnoreModifiers L25
 
-DeskTopSize 2x1
-MenuStyle * fvwm, Font "xft:JetBrains Mono:size=6:antialias=True"
+MenuStyle * fvwm, Font "xft:JetBrains Mono:pixelsize=14:antialias=True"
 MenuStyle * Foreground black, Background grey60, Greyed grey40
 
 ColormapFocus FollowsMouse
@@ -27,7 +28,7 @@ ColormapFocus FollowsMouse
 # default Styles:
 Style *           HilightFore black, HilightBack #919191
 Style *           BorderWidth 6, HandleWidth 6
-Style *           IconSize 128 128
+Style *           IconSize 256 256
 Style *           MWMFunctions, MWMDecor, HintOverride
 Style *           DecorateTransient, !UsePPosition
 Style *           IconBox 32 32 -32 -32, IconGrid 32 32, IconFill r b
@@ -86,6 +87,7 @@ AddToMenu Window-Ops	"Window Ops"	Title
 +			"Resize"	Resize
 +			"Raise"		Raise
 +			"Lower"		Lower
++     "Shade"   WindowShade toggle
 +		 	"(De)Iconify"	Thumbnail
 +			"(Un)Stick"	Stick
 +			"(Un)Maximize"	Maximize
@@ -115,6 +117,7 @@ AddToMenu Window-Ops2	"&Move"		Move
 +			"&Resize"	Resize
 +			"R&aise"	Raise
 +			"&Lower"	Lower
++     "S&hade"   WindowShade toggle
 +			"(De)&Iconify"	Thumbnail
 +			"(Un)&Stick"	Stick
 +     "(Un)Ma&ximize" Maximize
@@ -196,7 +199,7 @@ AddToFunc Thumbnail
 + I ThisWindow (Shaded) WindowShade toggle
 + I Raise
 + I ThisWindow (Iconifiable, !Iconic) PipeRead \
-    "xwd -silent -id $[w.id] | convert -scale 128 -frame 1x1 \
+    "xwd -silent -id $[w.id] | convert -scale 256 -frame 1x1 \
     -mattecolor black -quality 0 xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
 + I Iconify
 + I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png, StaysOnBottom
