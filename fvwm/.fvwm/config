@@ -215,4 +215,3 @@ AddToFunc DeThumbnail
 + I DestroyWindowStyle
 + I Exec rm -f $HOME/.fvwm/icon.tmp.$[w.id].png
 + I Iconify
-+ I All (Iconic) PlaceAgain Icon
