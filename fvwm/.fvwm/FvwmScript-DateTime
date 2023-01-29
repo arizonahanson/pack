@@ -1,6 +1,6 @@
 WindowTitle {DateTime}
 WindowSize  120 35
-Font "xft:Sans:style=Bold:size=10" 
+Font "xft:Sans:style=Bold:pixelsize=10"
 
 Init
  Begin
@@ -12,7 +12,7 @@ Init
 End
 
 PeriodicTasks
- Begin 
+ Begin
   If (RemainderOfDiv (GetTime) 15)==0 Then
   Begin
    Set $Time = (GetOutput {exec date "+%H:%M"} 1 -1)
@@ -27,7 +27,7 @@ Widget 1
 Property
  Position 0 0
  Size 120 20
- Font "xft:Sans:style=Bold:size=11"
+ Font "xft:Sans:style=Bold:pixelsize=11"
  Type ItemDraw
  Flags NoReliefString
  Title {}
@@ -42,7 +42,7 @@ Widget 2
 Property
  Position 0 20
  Size 120 15
- Font "xft:Sans:style=Bold:size=8"
+ Font "xft:Sans:style=Bold:pixelsize=8"
  Type ItemDraw
  Flags NoReliefString
  Title {}

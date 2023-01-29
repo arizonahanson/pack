@@ -1,6 +1,6 @@
 WindowTitle {ConfirmQuit}
 WindowSize  300 80
-Font "xft:Sans:style=Bold:size=10"
+Font "xft:Sans:style=Bold:pixelsize=10"
 Init
  Begin
  End
