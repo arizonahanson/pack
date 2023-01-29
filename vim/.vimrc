@@ -42,6 +42,7 @@ call plug#begin('~/.vim-plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'dense-analysis/ale'
   Plug 'JuliaEditorSupport/julia-vim'
+  Plug 'rhysd/vim-llvm'
 call plug#end()
 
 "--- important
