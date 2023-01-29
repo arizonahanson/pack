@@ -191,7 +191,8 @@ MoveThreshold 3
 Style * SloppyFocus, MouseFocusClickRaises
 
 # Default Font
-DefaultFont "xft:Sans:Bold:size=8:antialias=True"
+#DefaultFont "xft:Sans:Bold:size=8:antialias=True"
+DefaultFont "xft:JetBrains Mono:pixelsize=16:antialias=True"
 
 # Window Placement
 Style * MinOverlapPlacement, GrabFocusOff, !UsePPosition
@@ -252,15 +253,15 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #eeeeee, bg #003c3c, hi, sh, Plain, NoShape
-Colorset 1  fg #000000, bg #2d2d2d, hi, sh, Plain, NoShape
-Colorset 2  fg #eeeeee, bg #474747, hi, sh, Plain, NoShape
-Colorset 3  fg black, bg #1d1d1d, hi #3d3d3d, sh #303030, Plain, NoShape
-Colorset 4  fg black, bg #2d2d2d, hi #474747, sh #101010, Plain, NoShape
-Colorset 5  fg #000000, bg #eeeeee, hi, sh, Plain, NoShape
-Colorset 6  fg #eeeeee, bg #2d2d2d, hi, sh, Plain, NoShape
-Colorset 7  fg grey30, bg #eeeeee, hi, sh, Plain, NoShape
-Colorset 8  fg #eeeeee, bg #003c3c, hi, sh, Plain, NoShape
+Colorset 0  fg #e2e2e2, bg #000000, hi, sh, Plain, NoShape
+Colorset 1  fg #919191, bg #474747, hi, sh, Plain, NoShape
+Colorset 2  fg #000000, bg #919191, hi, sh, Plain, NoShape
+Colorset 3  fg black, bg #474747, hi #777777, sh #222222, Plain, NoShape
+Colorset 4  fg black, bg #919191, hi #e2e2e2, sh #474747, Plain, NoShape
+Colorset 5  fg #000000, bg #919191, hi, sh, Plain, NoShape
+Colorset 6  fg #e2e2e2, bg #474747, hi, sh, Plain, NoShape
+Colorset 7  fg #474747, bg #919191, hi, sh, Plain, NoShape
+Colorset 8  fg #e2e2e2, bg #474747, hi, sh, Plain, NoShape
 Colorset 10 fg #eeeeee, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #eeeeee, hi, sh, Plain, NoShape
@@ -274,20 +275,20 @@ MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
 MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
 MenuStyle * TrianglesSolid, TrianglesUseFore
 MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
-MenuStyle * Font "xft:Sans:Bold:size=8:antialias=True"
+#MenuStyle * Font "xft:Sans:Bold:size=8:antialias=True"
 
 # Root Menu
 #
 # The root menu will PopUp with a click in the root
 # window or using alt-f1 (or menu).
 DestroyMenu MenuFvwmRoot
-AddToMenu   MenuFvwmRoot "Fvwm" Title
+AddToMenu   MenuFvwmRoot "Menu" Title
 + "&Programs%icons/programs.png%" Popup MenuPrograms
-+ "XDG &Menu%icons/apps.png%" Popup XDGMenu
+#+ "XDG &Menu%icons/apps.png%" Popup XDGMenu
 + "&Kitty%icons/terminal.png%" Exec exec kitty
 + "" Nop
 + "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -terminal xterm
-+ "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
+#+ "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
 + "M&an Pages%icons/help.png%" Popup MenuFvwmManPages
 + "Copy Config%icons/conf.png%" FvwmScript FvwmScript-ConfirmCopyConfig
 + "" Nop
@@ -538,7 +539,7 @@ ButtonStyle 6 - MwmDecorMin
 # a window. One use is getting the class/resource/name of a window.
 DestroyModuleConfig FvwmIdent:*
 *FvwmIdent: Colorset 10
-*FvwmIdent: Font "xft:Sans:size=10:antialias=True"
+#*FvwmIdent: Font "xft:Sans:size=10:antialias=True"
 
 # FvwmBanner
 #
@@ -573,7 +574,7 @@ DestroyModuleConfig RightPanel:*
 *RightPanel: Rows $[vp.height]
 *RightPanel: Columns 120
 *RightPanel: Frame 0
-*RightPanel: Font "xft:Sans:Bold:size=10:antialias=True"
+#*RightPanel: Font "xft:Sans:Bold:size=10:antialias=True"
 *RightPanel: (120x45, Icon "fvwm-logo-small.png", Frame 0)
 *RightPanel: (120x5, Frame 0)
 *RightPanel: (10x20, Frame 0)
@@ -606,9 +607,9 @@ DestroyModuleConfig FvwmPager:*
 *FvwmPager: HilightColorset * 13
 *FvwmPager: BalloonColorset * 10
 *FvwmPager: WindowColorsets 10 11
-*FvwmPager: Font None
+#*FvwmPager: Font None
 *FvwmPager: Balloons All
-*FvwmPager: BalloonFont "xft:Sans:Bold:size=8:antialias=True"
+#*FvwmPager: BalloonFont "xft:Sans:Bold:size=8:antialias=True"
 *FvwmPager: BallonYOffset +2
 *FvwmPager: Window3dBorders
 *FvwmPager: MiniIcons
@@ -631,7 +632,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: DrawIcons always
 *FvwmIconMan: ReliefThickness 0
 *FvwmIconMan: Format "%t"
-*FvwmIconMan: Font "xft:Sans:Bold:size=8:antialias=True"
+#*FvwmIconMan: Font "xft:Sans:Bold:size=8:antialias=True"
 *FvwmIconMan: Action Mouse 0 A ret
 *FvwmIconMan: Action Mouse 1 A sendcommand IconManClick
 *FvwmIconMan: Action Mouse 3 A sendcommand "Menu MenuIconOps"
