@@ -208,7 +208,7 @@ Style * DecorateTransient, StackTransientParent
 Style * !FPGrabFocusTransient, FPReleaseFocusTransient
 
 # WindowShade
-Style * WindowShadeScrolls, WindowShadeSteps 10
+Style * WindowShadeScrolls, WindowShadeSteps 0
 
 # Ignore Numlock and other modifiers for bindings
 # See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
@@ -467,16 +467,17 @@ Silent Key F4 A C GotoDesk 0 3
 #Silent Key Super_R A A Exec exec $[infostore.terminal]
 
 # Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
-#   1 - Open the WindowOps menu.
-#   2 - Close on single click, Destory on double click.
-#   4 - Maximize (right/middle button will only maximize vertical/horizontal)
-#   6 - Iconify (minimize)
+#   2 - Open the WindowOps menu.
+#   1 - Close on single click, Destroy on double click.
+#   3 - Maximize (right/middle button will only maximize vertical/horizontal)
+#   5 - Iconify (minimize)
 Mouse 1 2 A Menu MenuWindowOps Delete
 Mouse 1 1 A Close
 Mouse 1 3 A Maximize 100 100
-Mouse 2 3 A Maximize 0 100
-Mouse 3 3 A Maximize 100 0
+Mouse 2 3 A Maximize 100 0
+Mouse 3 3 A Maximize 0 100
 Mouse 1 5 A Thumbnail
+Mouse 3 5 A WindowShade toggle
 
 #   TitleBar: Click to Raise, Move, Double Click to Maximize
 #             Mouse Wheel Up/Down to WindowShade On/Off
@@ -507,7 +508,7 @@ Mouse 3 I    A Menu MenuIconOps
 #   4 - Maximize
 #   6 - Minimize
 ###########
-TitleStyle LeftJustified Height 32
+TitleStyle Centered Height 32
 ButtonStyle All - Clear
 
 AddButtonStyle 2 AllNormal Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
