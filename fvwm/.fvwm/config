@@ -215,7 +215,7 @@ Style * WindowShadeScrolls, WindowShadeSteps 0
 IgnoreModifiers L25
 
 # Decor Styles
-Style * BorderWidth 8, HandleWidth 8, MWMButtons, FvwmBorder, FirmBorder
+Style * BorderWidth 6, HandleWidth 6, MWMButtons, FvwmBorder, FirmBorder
 Style * Colorset 1, HilightColorset 2
 Style * BorderColorset 3, HilightBorderColorset 4
 
@@ -514,13 +514,13 @@ ButtonStyle All - Clear
 AddButtonStyle 2 AllNormal Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
 ButtonStyle 2 - MwmDecorMenu
 
-ButtonStyle 1 AllNormal Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+ButtonStyle 1 AllNormal Vector 17 25x25@1 35x25@1 50x40@1 65x25@1 75x25@1 75x35@0 60x50@0 75x65@1 75x75@0 65x75@0 50x60@0 35x75@0 25x75@0 25x65@0 40x50@1 25x35@0 25x25@1
 
 AddButtonStyle 3 AllUp Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
 AddButtonStyle 3 AllDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0
 ButtonStyle 3 - MwmDecorMax
 
-AddButtonStyle 5 AllNormal Vector 5 25x40@1 25x60@1 75x60@0 75x40@0 25x40@1
+AddButtonStyle 5 AllNormal Vector 5 25x50@1 25x75@1 75x75@0 75x50@0 25x50@1
 ButtonStyle 5 - MwmDecorMin
 
 ############
