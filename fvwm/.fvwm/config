@@ -222,7 +222,7 @@ Style * BorderColorset 3, HilightBorderColorset 4
 # Disable Icons from appearing on desktop.
 # Comment this out or use Style * Icon to get the icons back.
 #Style * !Icon
-Style * IconBox 32 32 -32 -32, IconGrid 64 64, IconFill l b
+Style * IconBox 32 32 -32 -32, IconGrid 128 72, IconFill r b
 
 # Window Specific Styles
 Style RightPanel !Title, !Borders, !Handles, Sticky, \
@@ -656,7 +656,7 @@ AddToFunc Thumbnail
 + I ThisWindow (Shaded) WindowShade toggle
 + I Raise
 + I ThisWindow (Iconifiable, !Iconic) PipeRead \
- "xwd -silent -id $[w.id] | convert -thumbnail 256x192 -quality 0 \
+ "xwd -silent -id $[w.id] | convert -thumbnail 256x144 -quality 0 \
   xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
 + I Iconify
 + I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png
