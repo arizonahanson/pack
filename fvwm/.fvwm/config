@@ -508,7 +508,7 @@ Mouse 3 I    A Menu MenuIconOps
 #   4 - Maximize
 #   6 - Minimize
 ###########
-TitleStyle Centered Height 32
+TitleStyle Centered Height 24 -- flat
 ButtonStyle All - Clear
 
 AddButtonStyle 2 AllNormal Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
@@ -522,7 +522,6 @@ ButtonStyle 3 - MwmDecorMax
 
 AddButtonStyle 5 AllNormal Vector 5 25x50@1 25x75@1 75x75@0 75x50@0 25x50@1
 ButtonStyle 5 - MwmDecorMin
-
 ############
 # 7: Modules
 #############
