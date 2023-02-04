@@ -222,7 +222,7 @@ Style * BorderColorset 3, HilightBorderColorset 4
 # Disable Icons from appearing on desktop.
 # Comment this out or use Style * Icon to get the icons back.
 #Style * !Icon
-Style * IconBox 32 32 -32 -32, IconGrid 128 72, IconFill r b
+Style * IconBox 32 32 -32 -32, IconGrid 96 96, IconFill t l
 
 # Window Specific Styles
 Style RightPanel !Title, !Borders, !Handles, Sticky, \
@@ -285,9 +285,11 @@ MenuStyle * ItemFormat "%|%3.1i%5.3l%5.3>%|"
 # window or using alt-f1 (or menu).
 DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Menu" Title
-+ "&Programs%icons/programs.png%" Popup MenuPrograms
+#+ "&Programs%icons/programs.png%" Popup MenuPrograms
 #+ "XDG &Menu%icons/apps.png%" Popup XDGMenu
++ "&Firefox%icons/terminal.png%" Exec exec firefox
 + "&Kitty%icons/terminal.png%" Exec exec kitty
++ "&Zathura%icons/terminal.png%" Exec exec zathura
 + "" Nop
 + "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -terminal xterm
 #+ "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
@@ -306,15 +308,15 @@ PipeRead "fvwm-menu-desktop -e"
 # This test for some common programs and adds them to the menu.
 # When adding programs you don't need to use the Test (x foo)
 # lines as this is only to help make this menu portable.
-DestroyMenu MenuPrograms
-AddToMenu   MenuPrograms "Programs" Title
-Test (x chromium) + "Chromium" Exec exec chromium
-Test (x firefox) + "Firefox" Exec exec firefox
-Test (x google-chrome) + "Google-Chrome" Exec exec google-chrome
-Test (x gvim) + "gVim" Exec exec gvim
-Test (x xemacs) + "XEmacs" Exec exec xemacs
-Test (x gimp) + "Gimp" Exec exec gimp
-Test (x vlc) + "VLC" Exec exec vlc
+#DestroyMenu MenuPrograms
+#AddToMenu   MenuPrograms "Programs" Title
+#Test (x chromium) + "Chromium" Exec exec chromium
+#Test (x firefox) + "Firefox" Exec exec firefox
+#Test (x google-chrome) + "Google-Chrome" Exec exec google-chrome
+#Test (x gvim) + "gVim" Exec exec gvim
+#Test (x xemacs) + "XEmacs" Exec exec xemacs
+#Test (x gimp) + "Gimp" Exec exec gimp
+#Test (x vlc) + "VLC" Exec exec vlc
 
 # Background Menu
 #
