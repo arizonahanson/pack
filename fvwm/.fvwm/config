@@ -260,9 +260,9 @@ Colorset 1  fg #919191, bg #474747, hi, sh, Plain, NoShape
 Colorset 2  fg #000000, bg #fffff0, hi, sh, Plain, NoShape
 Colorset 3  fg black, bg #474747, hi #777777, sh #222222, Plain, NoShape
 Colorset 4  fg black, bg #e2e2e2, hi #fffff0, sh #919191, Plain, NoShape
-Colorset 5  fg #000000, bg #919191, hi, sh, Plain, NoShape
+Colorset 5  fg #000000, bg #fffff0, hi, sh, Plain, NoShape
 Colorset 6  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
-Colorset 7  fg #474747, bg #919191, hi, sh, Plain, NoShape
+Colorset 7  fg #474747, bg #fffff0, hi, sh, Plain, NoShape
 Colorset 8  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
 Colorset 10 fg #eeeeee, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
@@ -339,7 +339,7 @@ AddToMenu   MenuWindowOps
 + "Stick"     Stick
 + "" Nop
 + "Close"     Close
-+ "More..."   Menu MenuWindowOpsLong Button2 0 32p
++ "More..."   Menu MenuWindowOpsLong Button2 0 24p
 
 DestroyMenu MenuWindowOpsLong
 AddToMenu   MenuWindowOpsLong
