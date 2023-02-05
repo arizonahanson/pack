@@ -215,7 +215,7 @@ Style * WindowShadeScrolls, WindowShadeSteps 0
 IgnoreModifiers L25
 
 # Decor Styles
-Style * BorderWidth 6, HandleWidth 6, MWMButtons, FvwmBorder, FirmBorder
+Style * BorderWidth 8, HandleWidth 8, MWMButtons, FvwmBorder, FirmBorder
 Style * Colorset 1, HilightColorset 2
 Style * BorderColorset 3, HilightBorderColorset 4
 
@@ -255,15 +255,15 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #e2e2e2, bg #000000, hi, sh, Plain, NoShape
+Colorset 0  fg #fffff0, bg #000000, hi, sh, Plain, NoShape
 Colorset 1  fg #919191, bg #474747, hi, sh, Plain, NoShape
-Colorset 2  fg #000000, bg #919191, hi, sh, Plain, NoShape
+Colorset 2  fg #000000, bg #fffff0, hi, sh, Plain, NoShape
 Colorset 3  fg black, bg #474747, hi #777777, sh #222222, Plain, NoShape
-Colorset 4  fg black, bg #919191, hi #e2e2e2, sh #474747, Plain, NoShape
+Colorset 4  fg black, bg #e2e2e2, hi #fffff0, sh #919191, Plain, NoShape
 Colorset 5  fg #000000, bg #919191, hi, sh, Plain, NoShape
-Colorset 6  fg #e2e2e2, bg #474747, hi, sh, Plain, NoShape
+Colorset 6  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
 Colorset 7  fg #474747, bg #919191, hi, sh, Plain, NoShape
-Colorset 8  fg #e2e2e2, bg #474747, hi, sh, Plain, NoShape
+Colorset 8  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
 Colorset 10 fg #eeeeee, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #eeeeee, hi, sh, Plain, NoShape
@@ -513,17 +513,18 @@ Mouse 3 I    A Menu MenuIconOps
 TitleStyle Centered Height 24 -- flat
 ButtonStyle All - Clear
 
-AddButtonStyle 2 AllNormal Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
-ButtonStyle 2 - MwmDecorMenu
+ButtonStyle 1 AllUp Vector 17 25x25@1 35x25@1 50x40@1 65x25@1 75x25@1 75x35@0 60x50@0 75x65@1 75x75@0 65x75@0 50x60@0 35x75@0 25x75@0 25x65@0 40x50@1 25x35@0 25x25@1 -- Flat
+AddButtonStyle 1 AllDown Vector 17 25x25@0 35x25@0 50x40@0 65x25@0 75x25@0 75x35@1 60x50@1 75x65@0 75x75@1 65x75@1 50x60@1 35x75@1 25x75@1 25x65@1 40x50@0 25x35@1 25x25@0 -- Flat
 
-ButtonStyle 1 AllNormal Vector 17 25x25@1 35x25@1 50x40@1 65x25@1 75x25@1 75x35@0 60x50@0 75x65@1 75x75@0 65x75@0 50x60@0 35x75@0 25x75@0 25x65@0 40x50@1 25x35@0 25x25@1
+ButtonStyle 3 AllUp Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1 -- Flat
+AddButtonStyle 3 AllDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0 -- Flat
 
-AddButtonStyle 3 AllUp Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
-AddButtonStyle 3 AllDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0
-ButtonStyle 3 - MwmDecorMax
+ButtonStyle 5 AllUp Vector 5 25x50@1 25x75@1 75x75@0 75x50@0 25x50@1 -- Flat
+AddButtonStyle 5 AllDown Vector 5 25x50@0 25x75@0 75x75@1 75x50@1 25x50@0 -- Flat
 
-AddButtonStyle 5 AllNormal Vector 5 25x50@1 25x75@1 75x75@0 75x50@0 25x50@1
-ButtonStyle 5 - MwmDecorMin
+ButtonStyle 2 AllUp Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1 -- Flat
+AddButtonStyle 2 AllDown Vector 5 40x40@0 60x40@0 60x60@1 40x60@1 40x40@0 -- Flat
+
 ############
 # 7: Modules
 #############
