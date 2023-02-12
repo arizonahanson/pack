@@ -16,9 +16,9 @@ setopt HIST_REDUCE_BLANKS
 setopt correct
 unsetopt LIST_BEEP
 
-GREP_COLORS="mt=38;5;3:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
-KEYTIMEOUT="1"
-LESS="-erFX"
+export GREP_COLORS="mt=38;5;3:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
+export KEYTIMEOUT="1"
+export LESS="-erFX"
 
 # compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
@@ -56,8 +56,8 @@ bindkey -a "${terminfo[khome]}" vi-beginning-of-line
 bindkey  "${terminfo[kend]}" vi-end-of-line
 bindkey -a "${terminfo[kend]}" vi-end-of-line
 # complete word
+bindkey '^k' vi-forward-word
 bindkey '^e' vi-end-of-line
-bindkey '^n' vi-forward-word
 # save prompt status
 zle-line-init() {
   typeset -g __prompt_status="$?"
