@@ -4,6 +4,7 @@ if [ -n "$__ZSH_SOURCED" ]; then return; fi
 __ZSH_SOURCED=1
 
 EDITOR=vim
+TERM=xterm-256color
 # history
 HISTFILE=~/.histfile
 HISTSIZE=9999
