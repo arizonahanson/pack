@@ -253,15 +253,15 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #fffff0, bg #000000, hi, sh, Plain, NoShape
+Colorset 0  fg #fffff8, bg #000000, hi, sh, Plain, NoShape
 Colorset 1  fg #919191, bg #474747, hi, sh, Plain, NoShape
-Colorset 2  fg #000000, bg #fffff0, hi, sh, Plain, NoShape
+Colorset 2  fg #000000, bg #fffff8, hi, sh, Plain, NoShape
 Colorset 3  fg black, bg #474747, hi #777777, sh #222222, Plain, NoShape
-Colorset 4  fg black, bg #e2e2e2, hi #fffff0, sh #919191, Plain, NoShape
-Colorset 5  fg #000000, bg #fffff0, hi, sh, Plain, NoShape
-Colorset 6  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
-Colorset 7  fg #474747, bg #fffff0, hi, sh, Plain, NoShape
-Colorset 8  fg #fffff0, bg #474747, hi, sh, Plain, NoShape
+Colorset 4  fg black, bg #e2e2e2, hi #fffff8, sh #919191, Plain, NoShape
+Colorset 5  fg #000000, bg #fffff8, hi, sh, Plain, NoShape
+Colorset 6  fg #fffff8, bg #474747, hi, sh, Plain, NoShape
+Colorset 7  fg #474747, bg #fffff8, hi, sh, Plain, NoShape
+Colorset 8  fg #fffff8, bg #474747, hi, sh, Plain, NoShape
 Colorset 10 fg #eeeeee, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #eeeeee, hi, sh, Plain, NoShape
