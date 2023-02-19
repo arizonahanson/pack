@@ -58,6 +58,7 @@ AddToFunc   StartFunction
 + I Test (f $[HOME]/.fehbg) \
     Exec exec $[HOME]/.fehbg
 + I TestRc (NoMatch) Exec exec feh --bg-fill $[FVWM_USERDIR]/wallpaper.png
++ I Exec rm -f $[HOME]/.fvwm/icon.tmp.*.*
 #+ I Test (Init) Module FvwmBanner
 #+ I Module FvwmButtons RightPanel
 #+ I Module FvwmEvent EventNewDesk
@@ -220,7 +221,7 @@ Style * BorderColorset 3, HilightBorderColorset 4
 # Disable Icons from appearing on desktop.
 # Comment this out or use Style * Icon to get the icons back.
 #Style * !Icon
-Style * IconBox 32 32 -32 -32, IconGrid 96 96, IconFill t l
+Style * IconBox 32 32 -32 -32, IconGrid 96 96, IconFill r t
 
 # Window Specific Styles
 Style RightPanel !Title, !Borders, !Handles, Sticky, \
@@ -649,15 +650,11 @@ AddToFunc Thumbnail
 + I ThisWindow (Shaded) WindowShade toggle
 + I Raise
 + I ThisWindow (Iconifiable, !Iconic) PipeRead \
- "xwd -silent -id $[w.id] | convert -thumbnail 256x144 -quality 0 \
-  xwd:- png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
+ "xwd -silent -id $[w.id] -out $[HOME]/.fvwm/icon.tmp.$[w.id].xwd"
++ I Lower
 + I Iconify
++ I ThisWindow (Iconic) PipeRead \
+ "convert -thumbnail 256x144 -quality 0 xwd:$[HOME]/.fvwm/icon.tmp.$[w.id].xwd png:$[HOME]/.fvwm/icon.tmp.$[w.id].png"
 + I ThisWindow WindowStyle IconOverride, Icon $[HOME]/.fvwm/icon.tmp.$[w.id].png
 + I PlaceAgain Icon
-+ I Lower
-
-DestroyFunc DeThumbnail
-AddToFunc DeThumbnail
-+ I DestroyWindowStyle
-+ I Exec rm -f $HOME/.fvwm/icon.tmp.$[w.id].png
-+ I Iconify
++ I Exec rm -f $[HOME]/.fvwm/icon.tmp.$[w.id].xwd
