@@ -18,6 +18,7 @@ setopt correct
 unsetopt LIST_BEEP
 
 export GREP_COLORS="mt=38;5;3:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
+export GREP_COLOR="1;35;47"
 export KEYTIMEOUT="1"
 export LESS="-erFX"
 
@@ -25,7 +26,7 @@ export LESS="-erFX"
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='43;30'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='47;30'
 
 # antigen
 source "$HOME/.antigen.zsh"
@@ -88,7 +89,7 @@ precmd() {
 
 # zsh-syntax-highlighting
 ZLE_RPROMPT_INDENT=2
-export ZSH_HIGHLIGHT_STYLES[cursor]='fg=11'
+export ZSH_HIGHLIGHT_STYLES[cursor]='fg=8'
 export ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=9'
 export ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 export ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
@@ -115,7 +116,7 @@ export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta'
 
 # zsh-auto-suggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 export ZSH_AUTOSUGGEST_STRATEGY=("match_prev_cmd" "history")
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=vi-forward-char
 

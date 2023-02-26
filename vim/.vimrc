@@ -15,11 +15,11 @@ let g:gitgutter_override_sign_column_highlight=0
 let g:gitgutter_map_keys=0
 let g:gitgutter_sign_priority=1
 let g:gitgutter_sign_allow_clobber=0
-let g:gitgutter_sign_added='+ '
-let g:gitgutter_sign_modified='* '
-let g:gitgutter_sign_modified_removed='- '
-let g:gitgutter_sign_removed='- '
-let g:gitgutter_sign_removed_first_line='- '
+let g:gitgutter_sign_added='+'
+let g:gitgutter_sign_modified='*'
+let g:gitgutter_sign_modified_removed='-'
+let g:gitgutter_sign_removed='-'
+let g:gitgutter_sign_removed_first_line='-'
 let g:go_auto_type_info=1
 let g:go_doc_popup_window=1
 let g:go_fmt_autosave=1
@@ -45,6 +45,7 @@ call plug#begin('~/.vim-plugged')
   Plug 'rhysd/vim-llvm'
 call plug#end()
 
+set background=light
 "--- important
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -65,7 +66,6 @@ autocmd FileType markdown setlocal nonumber
 "--- syntax, highlighting and spelling
 set hlsearch
 set cursorline
-set background=dark
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 autocmd FileType markdown setlocal spell spelllang=en_us
 autocmd BufRead,BufNewFile *.peg set ft=pigeon
