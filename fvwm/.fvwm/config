@@ -254,16 +254,16 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #fffff8, bg #000000, hi, sh, Plain, NoShape
-Colorset 1  fg #919191, bg #474747, hi, sh, Plain, NoShape
-Colorset 2  fg #000000, bg #fffff8, hi, sh, Plain, NoShape
-Colorset 3  fg black, bg #474747, hi #777777, sh #222222, Plain, NoShape
-Colorset 4  fg black, bg #e2e2e2, hi #fffff8, sh #919191, Plain, NoShape
-Colorset 5  fg #000000, bg #fffff8, hi, sh, Plain, NoShape
-Colorset 6  fg #fffff8, bg #474747, hi, sh, Plain, NoShape
-Colorset 7  fg #474747, bg #fffff8, hi, sh, Plain, NoShape
-Colorset 8  fg #fffff8, bg #474747, hi, sh, Plain, NoShape
-Colorset 10 fg #eeeeee, bg #003c3c, hi #aaaaaa, sh #999999, Plain, NoShape
+Colorset 0  fg #657b83, bg #fdf6e3, hi, sh, Plain, NoShape
+Colorset 1  fg #657b83, bg #93a1a1, hi, sh, Plain, NoShape
+Colorset 2  fg #657b83, bg #fdf6e3, hi, sh, Plain, NoShape
+Colorset 3  fg black, bg #93a1a1, hi #eee8d5, sh #657b83, Plain, NoShape
+Colorset 4  fg black, bg #eee8d5, hi #fdf6e3, sh #93a1a1, Plain, NoShape
+Colorset 5  fg #657b83, bg #fdf6e3, hi, sh, Plain, NoShape
+Colorset 6  fg #657b83, bg #eee8d5, hi, sh, Plain, NoShape
+Colorset 7  fg #fdf8d5, bg #93a1a1, hi, sh, Plain, NoShape
+Colorset 8  fg #657b83, bg #eee8d5, hi, sh, Plain, NoShape
+Colorset 10 fg #657b83, bg #fdf6e3, hi #eee8d5, sh #93a1a1, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #eeeeee, hi, sh, Plain, NoShape
 Colorset 13 fg #eeeeee, bg #006c6c, hi, sh, Plain, NoShape
@@ -286,9 +286,14 @@ DestroyMenu MenuFvwmRoot
 AddToMenu   MenuFvwmRoot "Menu" Title
 #+ "&Programs%icons/programs.png%" Popup MenuPrograms
 #+ "XDG &Menu%icons/apps.png%" Popup XDGMenu
-+ "&Firefox%icons/terminal.png%" Exec exec firefox
 + "&Kitty%icons/terminal.png%" Exec exec kitty
++ "&Firefox%icons/terminal.png%" Exec exec firefox
++ "&Spotify%icons/terminal.png%" Exec exec kitty spt
 + "&Zathura%icons/terminal.png%" Exec exec zathura
++ "" Nop
++ "&VSCode" Exec exec vscode
++ "&Openscad" Exec exec openscad
++ "&Prusa" Exec exec prusa-slicer
 + "" Nop
 + "Fvwm&Console%icons/terminal.png%" Module FvwmConsole -terminal xterm
 #+ "&Wallpapers%icons/wallpaper.png%" Popup BGMenu
@@ -512,10 +517,19 @@ Mouse 3 I    A Menu MenuIconOps
 TitleStyle Centered Height 24 -- flat
 ButtonStyle All - Clear
 
-ButtonStyle 1 AllNormal Pixmap $[FVWM_USERDIR]/close.png
-ButtonStyle 3 AllNormal Pixmap $[FVWM_USERDIR]/maximize.png
-ButtonStyle 5 AllNormal Pixmap $[FVWM_USERDIR]/minimize.png
-ButtonStyle 2 AllNormal Pixmap $[FVWM_USERDIR]/menu.png
+#ButtonStyle 1 AllNormal Pixmap $[FVWM_USERDIR]/close.png
+ButtonStyle 1 AllUp Vector 17 25x25@1 35x25@1 50x40@1 65x25@1 75x25@1 75x35@0 60x50@0 75x65@1 75x75@0 65x75@0 50x60@0 35x75@0 25x75@0 25x65@0 40x50@1 25x35@0 25x25@1 -- Flat
+
+AddButtonStyle 1 AllDown Vector 17 25x25@0 35x25@1 50x40@0 65x25@0 75x25@1 75x35@1 60x50@1 75x65@0 75x75@1 65x75@1 50x60@1 35x75@1 25x75@1 25x65@1 40x50@0 25x35@1 25x25@0 -- Flat
+#ButtonStyle 3 AllNormal Pixmap $[FVWM_USERDIR]/maximize.png
+ButtonStyle 3 AllUp Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1 -- Flat
+AddButtonStyle 3 AllDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0 -- Flat
+#ButtonStyle 5 AllNormal Pixmap $[FVWM_USERDIR]/minimize.png
+ButtonStyle 5 AllUp Vector 3 0+4px50+1p@0 100-5px50+1p@0 100-5px50-2p@0 -- Flat
+AddButtonStyle 5 AllDown Vector 3 0+4px50+1p@1 100-5px50+1p@1 100-5px50-2p@1 -- Flat
+#ButtonStyle 2 AllNormal Pixmap $[FVWM_USERDIR]/menu.png
+ButtonStyle 2 AllUp Vector 3 50-2px50+1p@0 50+1px50+1p@0 50+1px50-2p@0 -- Flat
+AddButtonStyle 2 AllDown Vector 3 50-2px50+1p@1 50+1px50+1p@1 50+1px50-2p@1 -- Flat
 
 ############
 # 7: Modules
