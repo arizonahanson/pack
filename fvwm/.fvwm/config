@@ -254,16 +254,16 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #647b83, bg #fdf6e3, hi, sh, Plain, NoShape
-Colorset 1  fg #647b83, bg #ced9c3, hi, sh, Plain, NoShape
-Colorset 2  fg #647b83, bg #fdf6e3, hi, sh, Plain, NoShape
-Colorset 3  fg black, bg #7e9b97, hi #ced9c3, sh #647b83, Plain, NoShape
-Colorset 4  fg black, bg #ced9c3, hi #fdf6e3, sh #7e9b97, Plain, NoShape
-Colorset 5  fg #647b83, bg #fdf6e3, hi #ced9c3, sh #647b83, Plain, NoShape
-Colorset 6  fg #647b83, bg #ced9c3, hi #fdf6e3, sh #7e9b97, Plain, NoShape
-Colorset 7  fg #ced9c3, bg #fdf6e3, hi #fdf6e3, sh #7e9b97, Plain, NoShape
-Colorset 8  fg #fdf6e3, bg #ced9c3, hi, sh, Plain, NoShape
-Colorset 10 fg #647b83, bg #fdf6e3, hi #eee8d5, sh #93a1a1, Plain, NoShape
+Colorset 0  fg #77748D, bg #F5F0E9, hi, sh, Plain, NoShape
+Colorset 1  fg #77748D, bg #CED2C5, hi, sh, Plain, NoShape
+Colorset 2  fg #77748D, bg #F5F0E9, hi, sh, Plain, NoShape
+Colorset 3  fg black, bg #A5B8AC, hi #CED2C5, sh #84A09E, Plain, NoShape
+Colorset 4  fg black, bg #CED2C5, hi #F5F0E9, sh #738895, Plain, NoShape
+Colorset 5  fg #77748D, bg #F5F0E9, hi #CED2C5, sh #77748D, Plain, NoShape
+Colorset 6  fg #77748D, bg #CED2C5, hi #F5F0E9, sh #738895, Plain, NoShape
+Colorset 7  fg #CED2C5, bg #F5F0E9, hi #F5F0E9, sh #738895, Plain, NoShape
+Colorset 8  fg #F5F0E9, bg #CED2C5, hi, sh, Plain, NoShape
+Colorset 10 fg #77748D, bg #F5F0E9, hi #eee8d5, sh #93a1a1, Plain, NoShape
 Colorset 11 fg #eeeeee, bg #1a6e99, hi #eeeeee, sh #eeeeee, Plain, NoShape
 Colorset 12 fg #2d2d2d, bg #eeeeee, hi, sh, Plain, NoShape
 Colorset 13 fg #eeeeee, bg #006c6c, hi, sh, Plain, NoShape

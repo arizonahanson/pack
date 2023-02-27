@@ -2,9 +2,9 @@ highlight Normal ctermbg=NONE ctermfg=NONE ctermul=NONE cterm=NONE
 highlight Noise ctermbg=NONE ctermfg=7 cterm=NONE
 highlight Identifier ctermbg=NONE ctermfg=NONE cterm=NONE
 highlight Comment ctermbg=NONE ctermfg=8 cterm=NONE
-highlight Cursor ctermbg=NONE ctermfg=0 cterm=NONE
-highlight CursorLine ctermbg=7 ctermfg=NONE cterm=NONE
-highlight CursorLineNr ctermbg=7 ctermfg=15 cterm=NONE
+highlight Cursor ctermbg=NONE ctermfg=NONE cterm=NONE
+highlight CursorLine ctermbg=NONE ctermfg=NONE cterm=NONE
+highlight CursorLineNr ctermbg=15 ctermfg=8 cterm=NONE
 highlight Visual ctermbg=7 cterm=NONE
 highlight StatusLine ctermbg=7 ctermfg=15 cterm=NONE
 highlight StatusLineNC ctermbg=8 ctermfg=7 cterm=NONE
