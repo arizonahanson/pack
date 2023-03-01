@@ -28,15 +28,6 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} ma='47;30'
 
-# antigen
-source "$HOME/.antigen.zsh"
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle colored-man-pages
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen apply
-
 # vi-like editing
 bindkey -v
 # backspace
@@ -87,6 +78,15 @@ precmd() {
   fi
 }
 
+# antigen
+source "$HOME/.antigen.zsh"
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle colored-man-pages
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen apply
+
 # zsh-syntax-highlighting
 ZLE_RPROMPT_INDENT=2
 export ZSH_HIGHLIGHT_STYLES[cursor]='fg=8'
@@ -101,8 +101,8 @@ export ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=11'
 export ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow'
 export ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan'
 export ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
-export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=white'
-export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=white'
+export ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=8'
+export ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=8'
 export ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
 export ZSH_HIGHLIGHT_STYLES[precommand]='fg=9'
 export ZSH_HIGHLIGHT_STYLES[command]='fg=green'
@@ -114,6 +114,7 @@ export ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=10'
 export ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=13'
 export ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta'
+export ZSH_HIGHLIGHT_STYLES[default]='fg=0'
 
 # zsh-auto-suggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
