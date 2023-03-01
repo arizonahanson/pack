@@ -57,7 +57,6 @@ DestroyFunc StartFunction
 AddToFunc   StartFunction
 + I Test (f $[HOME]/.fehbg) \
     Exec exec $[HOME]/.fehbg
-+ I TestRc (NoMatch) Exec exec feh --bg-fill $[FVWM_USERDIR]/wallpaper.png
 + I Exec rm -f $[HOME]/.fvwm/icon.tmp.*.*
 #+ I Test (Init) Module FvwmBanner
 #+ I Module FvwmButtons RightPanel
