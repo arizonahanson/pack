@@ -234,6 +234,13 @@ Style FvwmIdent WindowListSkip
 # Colorsets can be used to configure the color of the various
 # parts of fvwm such as window decor, menus, modules, etc.
 #
+InfoStoreAdd g0 #111111
+InfoStoreAdd g1 #2E2E2E
+InfoStoreAdd g2 #4E4E4E
+InfoStoreAdd g3 #6F6F6F
+InfoStoreAdd g4 #939393
+InfoStoreAdd g5 #B9B9B9
+
 # Colorset Convention
 #
 #   0 - Default
@@ -253,11 +260,11 @@ Style FvwmIdent WindowListSkip
 #      13 - FvwmPager Active Page
 #      14 - FvwmIconMan Iconified Button
 ###########
-Colorset 0  fg #77748D, bg #F5F0E9, hi, sh, Plain, NoShape
-Colorset 1  fg #77748D, bg #CED2C5, hi, sh, Plain, NoShape
-Colorset 2  fg #77748D, bg #F5F0E9, hi, sh, Plain, NoShape
-Colorset 3  fg black, bg #A5B8AC, hi #CED2C5, sh #84A09E, Plain, NoShape
-Colorset 4  fg black, bg #CED2C5, hi #F5F0E9, sh #738895, Plain, NoShape
+Colorset 0  fg $[infostore.g5], bg $[infostore.g0], hi, sh, Plain, NoShape
+Colorset 1  fg $[infostore.g4], bg $[infostore.g1], hi, sh, Plain, NoShape
+Colorset 2  fg $[infostore.g5], bg $[infostore.g0], hi, sh, Plain, NoShape
+Colorset 3  fg black, bg $[infostore.g1], hi $[infostore.g2], sh $[infostore.g0], Plain, NoShape
+Colorset 4  fg black, bg $[infostore.g2], hi $[infostore.g3], sh $[infostore.g1], Plain, NoShape
 Colorset 5  fg #77748D, bg #F5F0E9, hi #CED2C5, sh #77748D, Plain, NoShape
 Colorset 6  fg #77748D, bg #CED2C5, hi #F5F0E9, sh #738895, Plain, NoShape
 Colorset 7  fg #CED2C5, bg #F5F0E9, hi #F5F0E9, sh #738895, Plain, NoShape
