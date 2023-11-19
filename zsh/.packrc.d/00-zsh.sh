@@ -22,6 +22,8 @@ export GREP_COLOR="48;5;8;38;5;3"
 export KEYTIMEOUT="1"
 export LESS="-erFX"
 
+export XKB_DEFAULT_RULES=xorg
+
 # compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
