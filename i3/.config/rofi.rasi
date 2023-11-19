@@ -21,19 +21,19 @@ configuration {
 }
 * {
     spacing:                     2;
-    accent:                      #ab8c53;
-    warning:                     #bd8c63;
+    accent:                      #ae8f55;
+    warning:                     #C0856E;
     background:                  #000000;
-    foreground:                  #e2e2e2;
+    foreground:                  #b9b9b9;
     background-color:            var(background);
-    border-color:                #ab8c53;
-    lightfg:                     #919191;
-    lightbg:                     #474747;
+    border-color:                #c598c3;
+    lightfg:                     #6f6f6f;
+    lightbg:                     #2e2e2e;
     separatorcolor:              var(lightbg);
     normal-background:           var(background);
     active-background:           var(background);
     urgent-background:           var(background);
-    normal-foreground:           #474747;
+    normal-foreground:           #2e2e2e;
     active-foreground:           var(accent);
     urgent-foreground:           var(warning);
     alternate-normal-background: var(normal-background);
