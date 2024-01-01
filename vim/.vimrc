@@ -43,6 +43,7 @@ call plug#begin('~/.vim-plugged')
   Plug 'dense-analysis/ale'
   Plug 'JuliaEditorSupport/julia-vim'
   Plug 'rhysd/vim-llvm'
+  Plug 'ziglang/zig.vim'
 call plug#end()
 
 set background=light
