@@ -1,5 +1,5 @@
 xterm*faceName: JetBrains Mono
-xterm*faceSize: 8
+xterm*faceSize: 12
 xterm*activeIcon: false
 ! special
 *.foreground:   #b9b9b9
