@@ -5,19 +5,17 @@ configuration {
   yoffset: 0;
   xoffset: 0;
   fixed-num-lines: true;
-  show-icons: true;
-  terminal: "termite";
+  show-icons: false;
+  terminal: "kitty";
   run-shell-command: "{terminal} -e '{cmd}'";
-  icon-theme: "starlight";
   combi-modi: "window,run,drun";
   scroll-method: 1;
   window-format: "{w} {c} ⋆ {t}";
   drun-use-desktop-cache: false;
-  display-window: "";
-  display-run: "";
-  display-ssh: "";
-  display-drun: "";
-  display-combi: "";
+  display-window: "=>";
+  display-run: " ";
+  display-drun: " ";
+  display-combi: " ";
 }
 * {
     spacing:                     2;
@@ -50,7 +48,7 @@ configuration {
     selected-urgent-foreground:  var(urgent-foreground);
 }
 window {
-    width: 64ch;
+    width: 40ch;
 }
 element {
     padding: 1px ;
