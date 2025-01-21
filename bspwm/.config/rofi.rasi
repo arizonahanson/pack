@@ -1,5 +1,5 @@
 configuration {
-  modi: "window,run,drun,combi";
+  modi: "window,run,combi";
   font: "JetBrains Mono 16";
   location: 0;
   yoffset: 0;
@@ -7,24 +7,22 @@ configuration {
   fixed-num-lines: true;
   show-icons: false;
   terminal: "kitty";
-  run-shell-command: "{terminal} -e '{cmd}'";
-  combi-modi: "window,run,drun";
+  run-shell-command: "{terminal} '{cmd}'";
+  combi-modi: "window,run";
   scroll-method: 1;
-  window-format: "{w} {c} ⋆ {t}";
-  drun-use-desktop-cache: false;
-  display-window: "=>";
+  window-format: "{c}:{w} [{t}]";
+  display-window: "⇒";
   display-run: " ";
-  display-drun: " ";
-  display-combi: " ";
+  display-combi: "*";
 }
 * {
     spacing:                     2;
-    accent:                      #ae8f55;
+    accent:                      #948cc7;
     warning:                     #C0856E;
     background:                  #000000;
     foreground:                  #b9b9b9;
     background-color:            var(background);
-    border-color:                #c598c3;
+    border-color:                #948cc7;
     lightfg:                     #6f6f6f;
     lightbg:                     #2e2e2e;
     separatorcolor:              var(lightbg);
