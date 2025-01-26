@@ -1,4 +1,5 @@
 bspwm
+dmenu
 en-freebsd-doc
 firefox
 git
@@ -6,7 +7,6 @@ jetbrains-mono
 kitty
 numlockx
 pkg
-rofi
 stow
 sudo
 tig

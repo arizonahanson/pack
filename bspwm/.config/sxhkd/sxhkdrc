@@ -58,7 +58,10 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -config ~/.config/rofi.rasi -show combi
+  dmenu_run -fn 'JetBrains Mono-18' -b -i -p 'run' -nb '#000000' -nf '#6f6f6f' -sb '#2e2e2e' -sf '#b9b9b9'
+
+# rofi segfaults :(
+#rofi -config ~/.config/rofi.rasi -show combi
 
 #
 # bspwm hotkeys
