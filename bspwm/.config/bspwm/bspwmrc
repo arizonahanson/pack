@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+xrandr -s 2560x1440
+xrdb -merge "$HOME/.Xresources"
+xmodmap -e "pointer = 1 2 3 4 5 6 7 0 0 0"
+
 # spread desktops
 desktops=10
 count=$(xrandr -q | grep -c ' connected')
@@ -10,15 +14,21 @@ for m in $(xrandr -q | grep ' connected' | awk '{print $1}'); do
   i=$((i+1))
 done
 
-# root window color
-xsetroot -solid '#948CC7'
 # pointer
 xsetroot -cursor_name left_ptr
+
 # turn off blanking
 xset -dpms
 xset s off
 xset s noblank
+
 numlockx on
+
+if [ -e "$HOME/.fehbg" ]; then
+  "$HOME/.fehbg"
+else
+  feh --bg-fill "$HOME/pix/wallpaper/pixel_warp.png"
+fi
 
 # border color
 bspc config focused_border_color  "#948CC7"
