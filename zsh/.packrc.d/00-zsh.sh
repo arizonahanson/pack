@@ -58,6 +58,7 @@ precmd() {
 }
 
 # antigen
+zstyle ':omz:alpha:lib:git' async-prompt no
 source "$HOME/.antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
