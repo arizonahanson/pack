@@ -1,5 +1,6 @@
 bspwm
 dmenu
+doas
 en-freebsd-doc
 feh
 firefox
@@ -9,7 +10,6 @@ kitty
 numlockx
 pkg
 stow
-sudo
 tig
 tmux
 tree
