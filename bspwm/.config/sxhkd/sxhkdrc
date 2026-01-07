@@ -54,7 +54,7 @@ super + {_,shift + }f
 
 # terminal emulator
 super + Return
-	xterm &
+	alacritty &
 
 # program launcher
 super + @space

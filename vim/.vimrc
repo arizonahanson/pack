@@ -205,4 +205,4 @@ nnoremap <Leader>tn :term<CR>
 tnoremap <C-W>tn <C-W>:term<CR>
 nnoremap <Leader>tt :tab term<CR>
 tnoremap <C-W>tt <C-W>:tab term<CR>
-set rtp^="/home/arizona/.opam/cs3110-2025sp/share/ocp-indent/vim"
+set rtp^="/home/arizona/.opam/cs3110-2026sp/share/ocp-indent/vim"

@@ -1,0 +1,31 @@
+[window]
+padding = { x = 8, y = 8 }
+decorations = "None"
+
+[font]
+normal = { family = "Terminus", style = "Regular" }
+size = 16
+
+[colors.primary]
+foreground = "#b9b9b9"
+background = "#000000"
+
+[colors.normal]
+black = "#000000"
+red = "#C97E8D"
+green = "#70A05E"
+yellow = "#AE8F55"
+blue = "#6598C3"
+magenta = "#B481BE"
+cyan = "#09A599"
+white = "#6f6f6f"
+
+[colors.bright]
+black = "#2e2e2e"
+red = "#C0856E"
+green = "#43A47B"
+yellow = "#93984E"
+blue = "#948CC7"
+magenta = "#C67CAA"
+cyan = "#2CA1B2"
+white = "#b9b9b9"
