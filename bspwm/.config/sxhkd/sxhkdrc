@@ -54,7 +54,7 @@ super + {_,shift + }f
 
 # terminal emulator
 super + Return
-	kitty &
+	xterm &
 
 # program launcher
 super + @space
