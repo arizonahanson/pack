@@ -8,7 +8,7 @@ size = 16
 
 [colors.primary]
 foreground = "#b9b9b9"
-background = "#000000"
+background = "#111111"
 
 [colors.normal]
 black = "#000000"
@@ -29,3 +29,10 @@ blue = "#948CC7"
 magenta = "#C67CAA"
 cyan = "#2CA1B2"
 white = "#b9b9b9"
+
+[cursor]
+vi_mode_style = { shape = "Block", blinking = "On" }
+
+[mouse]
+hide_when_typing = true
+
