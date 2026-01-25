@@ -42,7 +42,6 @@ call plug#begin('~/.vim-plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'dense-analysis/ale'
   Plug 'JuliaEditorSupport/julia-vim'
-  Plug 'rhysd/vim-llvm'
 call plug#end()
 
 set background=light
@@ -205,4 +204,6 @@ nnoremap <Leader>tn :term<CR>
 tnoremap <C-W>tn <C-W>:term<CR>
 nnoremap <Leader>tt :tab term<CR>
 tnoremap <C-W>tt <C-W>:tab term<CR>
-set rtp^="/home/arizona/.opam/cs3110-2026sp/share/ocp-indent/vim"
+set guifont=Fira\ Mono\ 14
+colorscheme habamax
+set guioptions=aegimLt
