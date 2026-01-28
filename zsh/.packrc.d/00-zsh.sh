@@ -127,7 +127,7 @@ PROMPT="%(?.%F{green}.%F{red})%#%f "
 
 ZSH_THEME_PWD='%F{blue}%3~%f'
 ZSH_THEME_GIT_PROMPT_PREFIX='%F{magenta} '
-ZSH_THEME_GIT_PROMPT_DIRTY='%f%F{yellow}*'
+ZSH_THEME_GIT_PROMPT_DIRTY='%f%F{yellow}+'
 ZSH_THEME_GIT_PROMPT_CLEAN=''
 ZSH_THEME_GIT_PROMPT_SUFFIX='%f'
 RPROMPT=" ${ZSH_THEME_PWD}\$(git_prompt_info)"
