@@ -10,11 +10,12 @@ HISTFILE=~/.histfile
 setopt correct
 unsetopt LIST_BEEP
 
+# 24-hour clock
+LC_TIME="C"
 export GREP_COLORS="mt=38;5;3:sl=:cx=:fn=38;5;4:ln=38;5;8:bn=38;5;5:se=38;5;7"
 export GREP_COLOR="48;5;8;38;5;3"
 export KEYTIMEOUT="1"
 export LESS="-erFX"
-
 export XKB_DEFAULT_RULES=xorg
 
 # compinstall
