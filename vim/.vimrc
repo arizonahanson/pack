@@ -205,5 +205,5 @@ tnoremap <C-W>tn <C-W>:term<CR>
 nnoremap <Leader>tt :tab term<CR>
 tnoremap <C-W>tt <C-W>:tab term<CR>
 set guifont=Fira\ Code\ 14
-colorscheme habamax
+colorscheme default
 set guioptions=aegimLt
