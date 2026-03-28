@@ -7,4 +7,4 @@ cd "$(dirname "$0")"
 
 ./topaz/bin/topaz link zsh
 
-echo 'add `source $HOME/.packrc.sh` to your $HOME/.zshrc'
+echo 'add `source $HOME/.topazrc.sh` to your $HOME/.zshrc'

@@ -19,7 +19,7 @@ topaz/bin/topaz list                     # List available packages
 ./install.sh
 ```
 
-This links the `zsh` package and tells you to source `$HOME/.packrc.sh` in your `.zshrc`.
+This links the `zsh` package and tells you to source `$HOME/.topazrc.sh` in your `.zshrc`.
 
 ## Layout
 
