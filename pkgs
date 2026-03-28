@@ -1,17 +1,17 @@
-alacritty
-bspwm
-chromium
-dmenu
-feh
-git
-numlockx
-pkg
-stow
-sudo
-terminus-font
-tig
-tmux
-tree
-vim
-xorg
-zsh
+# name          apt             brew            pkg
+alacritty       alacritty       --              alacritty
+bspwm           bspwm           --              bspwm
+chromium        chromium-browser chromium        chromium
+dmenu           dmenu           --              dmenu
+feh             feh             --              feh
+git             git             git             git
+numlockx        numlockx        --              numlockx
+stow            stow            stow            stow
+sudo            sudo            --              sudo
+terminus-font   fonts-terminus  --              terminus-font
+tig             tig             tig             tig
+tmux            tmux            tmux            tmux
+tree            tree            tree             tree
+vim             vim             vim             vim
+xorg            xorg            --              xorg
+zsh             zsh             zsh             zsh

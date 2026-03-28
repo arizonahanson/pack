@@ -1,3 +1,0 @@
-#!/bin/sh
-
-pkg query '%a %n' | grep '^0' | awk '{print $2}' | sort

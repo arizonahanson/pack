@@ -1,0 +1,86 @@
+#!/bin/sh
+# topaz — dotfiles manager
+# Wraps GNU stow with conflict handling, file adoption, and package management.
+
+set -e
+
+# Minimal resolve_path for bootstrapping (before lib/util.sh is loaded)
+_resolve() {
+  _t="$1"
+  while [ -L "$_t" ]; do
+    _d="$(cd "$(dirname "$_t")" && pwd)"
+    _t="$(readlink "$_t")"
+    case "$_t" in /*) ;; *) _t="$_d/$_t" ;; esac
+  done
+  _d="$(cd "$(dirname "$_t")" && pwd)"
+  printf '%s/%s\n' "$_d" "$(basename "$_t")"
+}
+
+# Resolve TOPAZ_ROOT (the repository root)
+_self="$(_resolve "$0")"
+TOPAZ_DIR="$(dirname "$(dirname "$_self")")"
+TOPAZ_ROOT="$(dirname "$TOPAZ_DIR")"
+TOPAZ_PACKAGES="$TOPAZ_ROOT/packages"
+export TOPAZ_DIR TOPAZ_ROOT TOPAZ_PACKAGES
+
+# Source libraries
+. "$TOPAZ_DIR/lib/util.sh"
+. "$TOPAZ_DIR/lib/platform.sh"
+. "$TOPAZ_DIR/lib/link.sh"
+. "$TOPAZ_DIR/lib/adopt.sh"
+. "$TOPAZ_DIR/lib/pkg.sh"
+
+usage() {
+  cat <<EOF
+usage: topaz <command> [args...]
+
+commands:
+  link <package...>        Link packages into \$HOME (with conflict detection)
+  unlink <package...>      Unlink packages from \$HOME
+  adopt <file> <package>   Move an unmanaged file into a package
+  status [<package>]       Show package link status
+  install [<package...>]   Install system packages for this platform
+  list                     List available packages
+  help                     Show this help
+EOF
+}
+
+if [ $# -eq 0 ]; then
+  usage
+  exit 1
+fi
+
+_cmd="$1"
+shift
+
+case "$_cmd" in
+  link)
+    [ $# -eq 0 ] && die "usage: topaz link <package...>"
+    topaz_link "$@"
+    ;;
+  unlink)
+    [ $# -eq 0 ] && die "usage: topaz unlink <package...>"
+    topaz_unlink "$@"
+    ;;
+  adopt)
+    topaz_adopt "$@"
+    ;;
+  status)
+    topaz_status "$@"
+    ;;
+  install)
+    detect_platform
+    topaz_install "$@"
+    ;;
+  list)
+    topaz_list
+    ;;
+  help|--help|-h)
+    usage
+    ;;
+  *)
+    log_error "unknown command: $_cmd"
+    usage
+    exit 1
+    ;;
+esac
